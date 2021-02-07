@@ -1,0 +1,476 @@
+@import "variables";
+@import "fonts";
+@import "leaflet";
+@import "mixins";
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: $navy;
+  color: $white;
+  padding: 8px;
+  z-index: 100;
+}
+
+.burger {
+  @include respond(0, $mobile-breakpoint) {
+    margin-right: 30px;
+  }
+  @include respond($mobile-breakpoint) {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 40px;
+  }
+  width: 35px;
+  height: 24px;
+  background: $white;
+  border: none;
+  outline: none;
+  padding: 0;
+  cursor: pointer;
+
+  &:hover {
+    .burger-line {
+      background: $blue;
+    }
+  }
+  &-line {
+    @include bg-transition();
+    height: 2px;
+    display: block;
+    background: $navy;
+    &:not(:last-child) {
+      margin-bottom: 9px;
+    }
+  }
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  font-family: Stem, sans-serif;
+  color: $navy;
+}
+
+.map-wrapper {
+  @include respond($mobile-breakpoint) {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+  }
+  .phone-list_block {
+    .phone-element {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+      a {
+        @include color-transition;
+        color: $navy;
+        &:hover {
+          color: $blue;
+        }
+        @include respond($mobile-breakpoint) {
+          font-size: 40px;
+        }
+        @include respond(0, $mobile-breakpoint) {
+          font-size: 24px;
+        }
+        font-weight: $bold;
+        letter-spacing: 1px;
+        @include link-style;
+      }
+    }
+  }
+  .map-communications {
+    @include respond($mobile-breakpoint) {
+      display: flex;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+    &_block {
+      @include respond($mobile-breakpoint) {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        padding-top: 84px;
+      }
+      @include respond(0, $mobile-breakpoint) {
+        padding: 40px 0;
+      }
+    }
+    .name-element {
+      @include respond($mobile-breakpoint) {
+        font-size: 42px;
+      }
+      @include respond(0, $mobile-breakpoint) {
+        font-size: 34px;
+      }
+      font-weight: $regular;
+      line-height: 1.333;
+      letter-spacing: .5px;
+    }
+    .label-element {
+      font-weight: $bold;
+      font-size: 1rem;
+      text-transform: uppercase;
+      color: $blue;
+      margin-top: 42px;
+      letter-spacing: 1.6px;
+      margin-bottom: 1rem;
+      &_padding {
+        padding-top: 8px;
+      }
+    }
+    .value-element {
+      @include respond($mobile-breakpoint) {
+        font-size: 21px;
+      }
+      @include respond(0, $mobile-breakpoint) {
+        font-size: 18px;
+      }
+      font-weight: $regular;
+      line-height: 1.619;
+      .email-link {
+        color: $navy;
+        border-bottom: 1px solid $blue;
+        padding-bottom: 7px;
+        @include link-style;
+        @include color-transition;
+        &:hover {
+          color: $blue;
+        }
+      }
+    }
+    .map-container {
+      @include respond($mobile-breakpoint) {
+        display: flex;
+      }
+    }
+  }
+  #map {
+    @include respond($mobile-breakpoint) {
+      height: 860px;
+      width: 50%;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      height: 300px;
+    }
+
+  }
+}
+
+.container {
+  max-width: 1330px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  .app-inner {
+    flex: 1 0 auto;
+    .footer {
+      flex: 0 0 auto;
+    }
+  }
+}
+
+.communications {
+  .phone-link {
+    @include link-style;
+    @include color-transition();
+    color: $navy;
+    font-family: "Open Sans Bold", sans-serif;
+    font-size: 20px;
+    line-height: 1.6;
+    &:hover {
+      color: $blue;
+    }
+  }
+  .email-link {
+    @include link-style;
+    font-weight: $regular;
+    font-size: 1rem;
+    color: $gray-font;
+    line-height: 1.5;
+    border-bottom: 1px solid;
+    padding-bottom: 1px;
+  }
+}
+
+.liquid {
+  display: flex;
+  align-items: center;
+}
+
+.header-navigation_block {
+  @include respond($mobile-breakpoint) {
+    position: absolute;
+    right: 40px;
+  }
+  display: flex;
+  align-items: center;
+  a {
+    display: inline-block;
+  }
+  svg {
+    display: block;
+    fill: $navy;
+  }
+  .magnifying-icon {
+    transform: scale(-1, 1);
+  }
+  .favorite-link {
+    margin-right: 30px;
+    &_pin {
+      position: relative;
+      &:after {
+        content: '';
+        width: 11px;
+        height: 11px;
+        background: $blue;
+        border-radius: 50%;
+        display: block;
+        position: absolute;
+        bottom: 4px;
+        right: 1px;
+      }
+    }
+  }
+}
+
+header {
+  @include respond(400px) {
+    height: 115px;
+  }
+  @include respond(0, 400px) {
+    height: 95px;
+  }
+  nav {
+    @include respond(0, $mobile-breakpoint) {
+      display: none;
+    }
+    padding-top: 5px;
+    margin-left: auto;
+    @include respond(0, 1270px) {
+      margin-right: 50px;
+    }
+    a {
+      &:not(:last-child) {
+        @include respond(1074px) {
+          margin-right: 50px;
+        }
+        @include respond(0, 1074px) {
+          margin-right: 35px;
+        }
+      }
+    }
+  }
+  .container {
+    @include respond($mobile-breakpoint, 1547px) {
+      margin-left: 105px;
+      margin-right: 105px;
+    }
+  }
+  .communications {
+    @include respond($mobile-breakpoint) {
+      margin-left: auto;
+    }
+    @include respond($mobile-breakpoint, 1660px) {
+      padding-right: 50px;
+    }
+    @include respond(0, 1270px) {
+      display: none;
+    }
+  }
+  .logo {
+    @include respond(0, $mobile-breakpoint) {
+      margin-right: auto;
+    }
+  }
+  .logo-text {
+    @include respond(0, 1660px) {
+      display: none;
+    }
+  }
+}
+
+footer {
+  @include respond($mobile-breakpoint) {
+    height: 115px;
+    .communications {
+      margin-left: auto;
+    }
+  }
+  @include respond(0, $mobile-breakpoint) {
+    padding: 30px 0;
+    .logo {
+      flex-direction: column;
+    }
+  }
+  nav {
+    @include respond(0, $mobile-breakpoint) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 30px 0;
+    }
+    @include respond($mobile-breakpoint) {
+      padding-top: 5px;
+      margin-left: auto;
+    }
+    a {
+      &:not(:last-child) {
+        @include respond($mobile-breakpoint) {
+          margin-right: 50px;
+        }
+        @include respond(0, $mobile-breakpoint) {
+          margin-bottom: 14px;
+        }
+      }
+    }
+  }
+  .liquid {
+    @include respond(0, $mobile-breakpoint) {
+      flex-direction: column;
+    }
+  }
+  .logo-text {
+    @include respond($mobile-breakpoint, 1280px) {
+      display: none;
+    }
+  }
+}
+
+nav {
+  a {
+    @include color-transition();
+    font-weight: $medium;
+    text-decoration: none;
+    color: $navy;
+    letter-spacing: .1px;
+    &:hover,
+    &.active {
+      color: $blue;
+    }
+  }
+}
+
+.app-panel {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.page-panel {
+  background: $navy url(../img/grid-background.png) no-repeat center / cover;
+
+  @include respond($mobile-breakpoint) {
+    padding: 58px 0 106px 0;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    padding: 42px 0 60px 0;
+  }
+  color: $white;
+  .page-title {
+    @include respond($mobile-breakpoint) {
+      font-size: 60px;
+      margin-top: 56px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      font-size: 44px;
+      margin-top: 40px;
+    }
+    font-weight: $regular;
+    line-height: 1.233;
+    letter-spacing: .5px;
+    margin-bottom: 20px;
+  }
+
+  .page-description {
+    @include respond($mobile-breakpoint) {
+      font-size: 21px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      font-size: 18px;
+    }
+    font-weight: $regular;
+    line-height: 1.667;
+  }
+}
+
+.breadcrumbs {
+  display: inline-flex;
+  align-items: center;
+  span {
+    color: $gray-font;
+  }
+  a {
+    color: $white;
+  }
+  a,
+  span {
+    font-size: 15px;
+    font-weight: $regular;
+    @include link-style;
+  }
+  .breadcrumbs-separator {
+    margin: 0 18px;
+    fill: $white;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  .logo-text {
+    position: relative;
+    color: $gray-font;
+    max-width: 234px;
+    font-weight: $regular;
+    line-height: 1.5;
+    transform: translateY(4px);
+    @include respond(0, $mobile-breakpoint) {
+      padding-top: 20px;
+      text-align: center;
+    }
+    @include respond($mobile-breakpoint) {
+      margin-left: 20px;
+      padding-left: 20px;
+      &:before {
+        position: absolute;
+        content: '';
+        width: 1px;
+        left: 0;
+        top: 4px;
+        bottom: 4px;
+        background: transparentize($navy, .7);
+      }
+    }
+  }
+  .logo-link {
+    display: inline-block;
+    svg {
+      display: block;
+      fill: $blue;
+    }
+  }
+}
