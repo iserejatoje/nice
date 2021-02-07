@@ -1,6 +1,8 @@
 @import "variables";
 @import "fonts";
 @import "leaflet";
+@import "buttons";
+@import "favorite";
 @import "mixins";
 
 .skip-link {
@@ -191,6 +193,8 @@ body {
   min-height: 100%;
   .app-inner {
     flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
     .footer {
       flex: 0 0 auto;
     }
@@ -267,6 +271,11 @@ header {
   }
   @include respond(0, 400px) {
     height: 90px;
+  }
+  .logo-link {
+    @include respond(0, $mobile-breakpoint) {
+      margin-right: 35px;
+    }
   }
   nav {
     @include respond(0, $mobile-breakpoint) {
@@ -384,6 +393,22 @@ nav {
   position: relative;
 }
 
+.asphalt {
+  background: $asphalt;
+}
+
+.page-inner {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.page-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
 .page-panel {
   background: $navy url(../img/grid-background.png) no-repeat center / cover;
 
@@ -472,9 +497,6 @@ nav {
   }
   .logo-link {
     display: inline-block;
-    @include respond(0, $mobile-breakpoint) {
-      margin-right: 35px;
-    }
     svg {
       display: block;
       max-width: 100%;

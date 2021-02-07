@@ -1,0 +1,37 @@
+@import "variables";
+@import "mixins";
+
+.favorite-block {
+  flex: 1;
+  @include respond($mobile-breakpoint) {
+    padding-bottom: 145px;
+    padding-top: 82px;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    padding-bottom: 45px;
+    padding-top: 40px;
+  }
+  .favorite-heading {
+    @include respond($mobile-breakpoint) {
+      font-size: 48px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      font-size: 36px;
+    }
+    font-weight: $regular;
+    letter-spacing: .5px;
+    margin-bottom: 28px;
+  }
+  .favorite-subheading {
+    font-size: 18px;
+    font-weight: $light;
+    color: transparentize($navy, .35);
+    @include respond($mobile-breakpoint) {
+      margin-bottom: 55px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      margin-bottom: 35px;
+    }
+
+  }
+}

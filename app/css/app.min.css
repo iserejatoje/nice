@@ -995,6 +995,113 @@ svg.leaflet-image-layer.leaflet-interactive path {
 .leaflet-gesture-handling-scroll-warning:after {
   content: attr(data-gesture-handling-scroll-content); }
 
+@font-face {
+  font-family: 'Open Sans Bold';
+  src: url("../fonts/OpenSans-Bold.eot");
+  src: url("../fonts/OpenSans-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-Bold.woff") format("woff"), url("../fonts/OpenSans-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Stem';
+  src: url("../fonts/Stem-Light.eot");
+  src: local("Stem Light"), local("Stem-Light"), url("../fonts/Stem-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/Stem-Light.woff2") format("woff2"), url("../fonts/Stem-Light.woff") format("woff"), url("../fonts/Stem-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Stem';
+  src: url("../fonts/Stem-Medium.eot");
+  src: local("Stem Medium"), local("Stem-Medium"), url("../fonts/Stem-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/Stem-Medium.woff2") format("woff2"), url("../fonts/Stem-Medium.woff") format("woff"), url("../fonts/Stem-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Stem';
+  src: url("../fonts/Stem-Bold.eot");
+  src: local("Stem Bold"), local("Stem-Bold"), url("../fonts/Stem-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Stem-Bold.woff2") format("woff2"), url("../fonts/Stem-Bold.woff") format("woff"), url("../fonts/Stem-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Stem';
+  src: url("../fonts/Stem-SemiLight.eot");
+  src: local("Stem Semi Light"), local("Stem-SemiLight"), url("../fonts/Stem-SemiLight.eot?#iefix") format("embedded-opentype"), url("../fonts/Stem-SemiLight.woff2") format("woff2"), url("../fonts/Stem-SemiLight.woff") format("woff"), url("../fonts/Stem-SemiLight.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Stem';
+  src: url("../fonts/Stem-ExtraLight.eot");
+  src: local("Stem Extra Light"), local("Stem-ExtraLight"), url("../fonts/Stem-ExtraLight.eot?#iefix") format("embedded-opentype"), url("../fonts/Stem-ExtraLight.woff2") format("woff2"), url("../fonts/Stem-ExtraLight.woff") format("woff"), url("../fonts/Stem-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Stem';
+  src: url("../fonts/Stem-Thin.eot");
+  src: local("Stem Thin"), local("Stem-Thin"), url("../fonts/Stem-Thin.eot?#iefix") format("embedded-opentype"), url("../fonts/Stem-Thin.woff2") format("woff2"), url("../fonts/Stem-Thin.woff") format("woff"), url("../fonts/Stem-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Stem';
+  src: url("../fonts/Stem-Regular.eot");
+  src: local("Stem Regular"), local("Stem-Regular"), url("../fonts/Stem-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Stem-Regular.woff2") format("woff2"), url("../fonts/Stem-Regular.woff") format("woff"), url("../fonts/Stem-Regular.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal; }
+
+.blue-btn {
+  background: #0090f0;
+  color: #fff;
+  height: 60px;
+  padding: 0 29px 0 36px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 40px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: .7px; }
+  .blue-btn:hover svg {
+    transform: translateX(8px); }
+  .blue-btn svg {
+    transition: transform 280ms ease;
+    fill: #fff;
+    margin-left: 20px;
+    display: block; }
+
+.favorite-block {
+  flex: 1; }
+  @media only all and (min-width: 1024px) {
+    .favorite-block {
+      padding-bottom: 145px;
+      padding-top: 82px; } }
+  @media only all and (min-width: 0) and (max-width: 1023px) {
+    .favorite-block {
+      padding-bottom: 45px;
+      padding-top: 40px; } }
+  .favorite-block .favorite-heading {
+    font-weight: 300;
+    letter-spacing: .5px;
+    margin-bottom: 28px; }
+    @media only all and (min-width: 1024px) {
+      .favorite-block .favorite-heading {
+        font-size: 48px; } }
+    @media only all and (min-width: 0) and (max-width: 1023px) {
+      .favorite-block .favorite-heading {
+        font-size: 36px; } }
+  .favorite-block .favorite-subheading {
+    font-size: 18px;
+    font-weight: 300;
+    color: rgba(9, 47, 87, 0.65); }
+    @media only all and (min-width: 1024px) {
+      .favorite-block .favorite-subheading {
+        margin-bottom: 55px; } }
+    @media only all and (min-width: 0) and (max-width: 1023px) {
+      .favorite-block .favorite-subheading {
+        margin-bottom: 35px; } }
+
 .skip-link {
   position: absolute;
   top: -40px;
@@ -1156,7 +1263,9 @@ body {
   flex-direction: column;
   min-height: 100%; }
   #app .app-inner {
-    flex: 1 0 auto; }
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column; }
     #app .app-inner .footer {
       flex: 0 0 auto; }
 
@@ -1219,6 +1328,10 @@ body {
 @media only all and (min-width: 0) and (max-width: 399px) {
   header {
     height: 90px; } }
+
+@media only all and (min-width: 0) and (max-width: 1023px) {
+  header .logo-link {
+    margin-right: 35px; } }
 
 header nav {
   padding-top: 5px;
@@ -1315,6 +1428,19 @@ nav a {
   align-items: center;
   position: relative; }
 
+.asphalt {
+  background: #f7f7f9; }
+
+.page-inner {
+  display: flex;
+  flex-direction: column;
+  flex: 1; }
+
+.page-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1; }
+
 .page-panel {
   background: #092f57 url(../img/grid-background.png) no-repeat center/cover;
   color: #fff; }
@@ -1391,9 +1517,6 @@ nav a {
           background: rgba(9, 47, 87, 0.3); } }
   .logo .logo-link {
     display: inline-block; }
-    @media only all and (min-width: 0) and (max-width: 1023px) {
-      .logo .logo-link {
-        margin-right: 35px; } }
     .logo .logo-link svg {
       display: block;
       max-width: 100%;
