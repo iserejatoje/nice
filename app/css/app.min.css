@@ -1011,10 +1011,12 @@ svg.leaflet-image-layer.leaflet-interactive path {
   border: none;
   outline: none;
   padding: 0;
-  cursor: pointer; }
+  cursor: pointer;
+  display: flex;
+  flex-direction: column; }
   @media only all and (min-width: 0) and (max-width: 1023px) {
     .burger {
-      margin-right: 30px; } }
+      margin-left: 30px; } }
   @media only all and (min-width: 1024px) {
     .burger {
       position: absolute;
@@ -1028,6 +1030,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
     transition: background-color 200ms ease;
     height: 2px;
     display: block;
+    width: 100%;
     background: #092f57; }
     .burger-line:not(:last-child) {
       margin-bottom: 9px; }
@@ -1215,7 +1218,7 @@ body {
 
 @media only all and (min-width: 0) and (max-width: 399px) {
   header {
-    height: 95px; } }
+    height: 90px; } }
 
 header nav {
   padding-top: 5px;
@@ -1388,6 +1391,10 @@ nav a {
           background: rgba(9, 47, 87, 0.3); } }
   .logo .logo-link {
     display: inline-block; }
+    @media only all and (min-width: 0) and (max-width: 1023px) {
+      .logo .logo-link {
+        margin-right: 20px; } }
     .logo .logo-link svg {
       display: block;
+      max-width: 100%;
       fill: #0090f0; }
