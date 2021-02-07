@@ -1,4 +1,11 @@
 jQuery(function ($) {
+    $('.burger').click(function() {
+        $('body').addClass('menu-opened');
+    });
+
+    $('.close-button').click(function() {
+        $('body').removeClass('menu-opened');
+    });
 
     if ($('#map').length > 0) {
         setTimeout(function () {

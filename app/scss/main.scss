@@ -4,6 +4,7 @@
 @import "buttons";
 @import "favorite";
 @import "mixins";
+@import "menu";
 
 .skip-link {
   position: absolute;
@@ -187,6 +188,14 @@ body {
   box-sizing: border-box;
 }
 
+
+.container-fluid {
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 #app {
   display: flex;
   flex-direction: column;
@@ -201,25 +210,37 @@ body {
   }
 }
 
+header,
+footer {
+  .communications {
+    .phone-link {
+      @include link-style;
+      @include color-transition();
+      color: $navy;
+      &:hover {
+        color: $blue;
+      }
+    }
+    .email-link {
+      color: $gray-font;
+      border-bottom: 1px solid;
+    }
+  }
+}
+
 .communications {
   .phone-link {
     @include link-style;
     @include color-transition();
-    color: $navy;
     font-family: "Open Sans Bold", sans-serif;
     font-size: 20px;
     line-height: 1.6;
-    &:hover {
-      color: $blue;
-    }
   }
   .email-link {
     @include link-style;
     font-weight: $regular;
     font-size: 1rem;
-    color: $gray-font;
     line-height: 1.5;
-    border-bottom: 1px solid;
     padding-bottom: 1px;
   }
 }
@@ -229,19 +250,33 @@ body {
   align-items: center;
 }
 
-.header-navigation_block {
-  @include respond($mobile-breakpoint) {
-    position: absolute;
-    right: 40px;
+header {
+  .app-navigation_block {
+    @include respond($mobile-breakpoint) {
+      position: absolute;
+      right: 40px;
+    }
   }
+}
+
+.app-navigation_block {
   display: flex;
   align-items: center;
   a {
     display: inline-block;
   }
+  &--white {
+    svg {
+      fill: $white;
+    }
+  }
+  &--navy {
+    svg {
+      fill: $navy;
+    }
+  }
   svg {
     display: block;
-    fill: $navy;
   }
   .magnifying-icon {
     transform: scale(-1, 1);
@@ -364,6 +399,11 @@ footer {
   .liquid {
     @include respond(0, $mobile-breakpoint) {
       flex-direction: column;
+    }
+  }
+  .communications {
+    @include respond(0, $mobile-breakpoint) {
+      text-align: center;
     }
   }
   .logo-text {

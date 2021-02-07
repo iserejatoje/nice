@@ -1,0 +1,182 @@
+@import "variables";
+@import "mixins";
+
+body.menu-opened {
+  overflow: hidden;
+  .menu {
+    display: block;
+    .close-button {
+      margin-right: auto;
+    }
+  }
+}
+
+.menu {
+  background: $navy url(../img/menu-background.png) repeat left top / cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 1000;
+  display: none;
+  overflow: auto;
+
+  .app-navigation_block {
+    @include respond(1387px) {
+      padding: 44px 20px;
+    }
+    @include respond(0, 1387px) {
+      padding: 44px 0;
+    }
+  }
+
+  .menu-list_item {
+    padding-left: 54px;
+    &:not(:last-child) {
+      margin-bottom: 23px;
+    }
+    a {
+      @include respond($mobile-breakpoint) {
+        font-size: 18px;
+      }
+      @include respond(0, $mobile-breakpoint) {
+        font-size: 16px;
+      }
+      transition: color 200ms ease, border 200ms ease;
+      @include link-style;
+      color: $white;
+      font-weight: $regular;
+      position: relative;
+      line-height: 1.667;
+      border-bottom: 1px solid transparent;
+      &:hover {
+        color: $blue;
+        border-bottom: 1px solid $blue;
+        &:before {
+          background: $blue;
+        }
+      }
+      &:before {
+        @include bg-transition;
+        content: '';
+        left: -52px;
+        position: absolute;
+        height: 1px;
+        top: 11px;
+        width: 35px;
+        background: transparentize($white, .5);
+      }
+    }
+  }
+
+  .communications {
+    padding-top: 18px;
+    .phone-link {
+      color: $white;
+      @include color-transition;
+      &:hover {
+        color: $blue;
+      }
+    }
+    .email-link {
+      color: $white;
+      font-weight: $light;
+      border-bottom: 1px solid transparentize($white, .5);
+    }
+    .address {
+      color: $white;
+      font-size: 18px;
+      font-weight: $regular;
+      line-height: 1.667;
+    }
+    .email {
+      margin: 26px 0;
+    }
+  }
+
+  .menu-content {
+    @include respond(1130px) {
+      padding-top: 65px;
+      padding-bottom: 80px;
+    }
+    @include respond(0, 1130px) {
+      padding-bottom: 70px;
+    }
+    display: flex;
+
+    @include respond(0, 1150px) {
+      flex-wrap: wrap;
+    }
+
+    &_column {
+      &:nth-child(1) {
+        width: 100%;
+        @include respond(1150px) {
+          max-width: 508px;
+        }
+        @include respond($mobile-breakpoint, 1150px) {
+          max-width: 50%;
+        }
+        .menu-list-title ~ .menu-list-title {
+          @include respond($mobile-breakpoint) {
+            margin-top: 71px;
+          }
+        }
+      }
+      &:nth-child(2) {
+        width: 100%;
+        @include respond(1150px) {
+          max-width: 511px;
+          padding-right: 70px;
+          box-sizing: border-box;
+        }
+        @include respond($mobile-breakpoint, 1150px) {
+          max-width: 50%;
+        }
+      }
+
+      &:nth-child(3) {
+        @include respond($mobile-breakpoint, 1150px) {
+          margin-top: 50px;
+        }
+        .menu-list-title {
+          &:nth-child(1),
+          &:nth-child(2) {
+            @include respond($mobile-breakpoint) {
+              margin-bottom: 60px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .menu-list {
+    padding-top: 21px;
+    @include respond(0, $mobile-breakpoint) {
+      margin-bottom: 30px;
+    }
+  }
+
+  .menu-link_heading {
+    @include respond($mobile-breakpoint) {
+      font-size: 48px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      font-size: 36px;
+    }
+    font-weight: $regular;
+    color: $white;
+    line-height: 1.542;
+    @include link-style;
+    letter-spacing: .3px;
+    @include color-transition;
+    &:hover {
+      color: $blue;
+    }
+    &:not(:first-child) {
+      margin-top: 78px;
+    }
+  }
+}

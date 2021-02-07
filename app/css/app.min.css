@@ -1051,6 +1051,13 @@ svg.leaflet-image-layer.leaflet-interactive path {
   font-weight: bold;
   font-style: normal; }
 
+.pure-btn {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0; }
+
 .blue-btn {
   background: #0090f0;
   color: #fff;
@@ -1101,6 +1108,141 @@ svg.leaflet-image-layer.leaflet-interactive path {
     @media only all and (min-width: 0) and (max-width: 1023px) {
       .favorite-block .favorite-subheading {
         margin-bottom: 35px; } }
+
+body.menu-opened {
+  overflow: hidden; }
+  body.menu-opened .menu {
+    display: block; }
+    body.menu-opened .menu .close-button {
+      margin-right: auto; }
+
+.menu {
+  background: #092f57 url(../img/menu-background.png) repeat left top/cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 1000;
+  display: none;
+  overflow: auto; }
+  @media only all and (min-width: 1387px) {
+    .menu .app-navigation_block {
+      padding: 44px 20px; } }
+  @media only all and (min-width: 0) and (max-width: 1386px) {
+    .menu .app-navigation_block {
+      padding: 44px 0; } }
+  .menu .menu-list_item {
+    padding-left: 54px; }
+    .menu .menu-list_item:not(:last-child) {
+      margin-bottom: 23px; }
+    .menu .menu-list_item a {
+      transition: color 200ms ease, border 200ms ease;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 300;
+      position: relative;
+      line-height: 1.667;
+      border-bottom: 1px solid transparent; }
+      @media only all and (min-width: 1024px) {
+        .menu .menu-list_item a {
+          font-size: 18px; } }
+      @media only all and (min-width: 0) and (max-width: 1023px) {
+        .menu .menu-list_item a {
+          font-size: 16px; } }
+      .menu .menu-list_item a:hover {
+        color: #0090f0;
+        border-bottom: 1px solid #0090f0; }
+        .menu .menu-list_item a:hover:before {
+          background: #0090f0; }
+      .menu .menu-list_item a:before {
+        transition: background-color 200ms ease;
+        content: '';
+        left: -52px;
+        position: absolute;
+        height: 1px;
+        top: 11px;
+        width: 35px;
+        background: rgba(255, 255, 255, 0.5); }
+  .menu .communications {
+    padding-top: 18px; }
+    .menu .communications .phone-link {
+      color: #fff;
+      transition: color 200ms ease; }
+      .menu .communications .phone-link:hover {
+        color: #0090f0; }
+    .menu .communications .email-link {
+      color: #fff;
+      font-weight: 300;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.5); }
+    .menu .communications .address {
+      color: #fff;
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 1.667; }
+    .menu .communications .email {
+      margin: 26px 0; }
+  .menu .menu-content {
+    display: flex; }
+    @media only all and (min-width: 1130px) {
+      .menu .menu-content {
+        padding-top: 65px;
+        padding-bottom: 80px; } }
+    @media only all and (min-width: 0) and (max-width: 1129px) {
+      .menu .menu-content {
+        padding-bottom: 70px; } }
+    @media only all and (min-width: 0) and (max-width: 1149px) {
+      .menu .menu-content {
+        flex-wrap: wrap; } }
+    .menu .menu-content_column:nth-child(1) {
+      width: 100%; }
+      @media only all and (min-width: 1150px) {
+        .menu .menu-content_column:nth-child(1) {
+          max-width: 508px; } }
+      @media only all and (min-width: 1024px) and (max-width: 1149px) {
+        .menu .menu-content_column:nth-child(1) {
+          max-width: 50%; } }
+      @media only all and (min-width: 1024px) {
+        .menu .menu-content_column:nth-child(1) .menu-list-title ~ .menu-list-title {
+          margin-top: 71px; } }
+    .menu .menu-content_column:nth-child(2) {
+      width: 100%; }
+      @media only all and (min-width: 1150px) {
+        .menu .menu-content_column:nth-child(2) {
+          max-width: 511px;
+          padding-right: 70px;
+          box-sizing: border-box; } }
+      @media only all and (min-width: 1024px) and (max-width: 1149px) {
+        .menu .menu-content_column:nth-child(2) {
+          max-width: 50%; } }
+    @media only all and (min-width: 1024px) and (max-width: 1149px) {
+      .menu .menu-content_column:nth-child(3) {
+        margin-top: 50px; } }
+    @media only all and (min-width: 1024px) {
+      .menu .menu-content_column:nth-child(3) .menu-list-title:nth-child(1), .menu .menu-content_column:nth-child(3) .menu-list-title:nth-child(2) {
+        margin-bottom: 60px; } }
+  .menu .menu-list {
+    padding-top: 21px; }
+    @media only all and (min-width: 0) and (max-width: 1023px) {
+      .menu .menu-list {
+        margin-bottom: 30px; } }
+  .menu .menu-link_heading {
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.542;
+    text-decoration: none;
+    letter-spacing: .3px;
+    transition: color 200ms ease; }
+    @media only all and (min-width: 1024px) {
+      .menu .menu-link_heading {
+        font-size: 48px; } }
+    @media only all and (min-width: 0) and (max-width: 1023px) {
+      .menu .menu-link_heading {
+        font-size: 36px; } }
+    .menu .menu-link_heading:hover {
+      color: #0090f0; }
+    .menu .menu-link_heading:not(:first-child) {
+      margin-top: 78px; }
 
 .skip-link {
   position: absolute;
@@ -1258,6 +1400,12 @@ body {
   width: 100%;
   box-sizing: border-box; }
 
+.container-fluid {
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+  box-sizing: border-box; }
+
 #app {
   display: flex;
   flex-direction: column;
@@ -1269,48 +1417,61 @@ body {
     #app .app-inner .footer {
       flex: 0 0 auto; }
 
+header .communications .phone-link,
+footer .communications .phone-link {
+  text-decoration: none;
+  transition: color 200ms ease;
+  color: #092f57; }
+  header .communications .phone-link:hover,
+  footer .communications .phone-link:hover {
+    color: #0090f0; }
+
+header .communications .email-link,
+footer .communications .email-link {
+  color: #929ba9;
+  border-bottom: 1px solid; }
+
 .communications .phone-link {
   text-decoration: none;
   transition: color 200ms ease;
-  color: #092f57;
   font-family: "Open Sans Bold", sans-serif;
   font-size: 20px;
   line-height: 1.6; }
-  .communications .phone-link:hover {
-    color: #0090f0; }
 
 .communications .email-link {
   text-decoration: none;
   font-weight: 300;
   font-size: 1rem;
-  color: #929ba9;
   line-height: 1.5;
-  border-bottom: 1px solid;
   padding-bottom: 1px; }
 
 .liquid {
   display: flex;
   align-items: center; }
 
-.header-navigation_block {
+@media only all and (min-width: 1024px) {
+  header .app-navigation_block {
+    position: absolute;
+    right: 40px; } }
+
+.app-navigation_block {
   display: flex;
   align-items: center; }
-  @media only all and (min-width: 1024px) {
-    .header-navigation_block {
-      position: absolute;
-      right: 40px; } }
-  .header-navigation_block a {
+  .app-navigation_block a {
     display: inline-block; }
-  .header-navigation_block svg {
-    display: block;
+  .app-navigation_block--white svg {
+    fill: #fff; }
+  .app-navigation_block--navy svg {
     fill: #092f57; }
-  .header-navigation_block .magnifying-icon {
+  .app-navigation_block svg {
+    display: block; }
+  .app-navigation_block .magnifying-icon {
     transform: scale(-1, 1); }
-  .header-navigation_block .favorite-link {
+  .app-navigation_block .favorite-link {
     margin-right: 30px; }
-    .header-navigation_block .favorite-link_pin {
+    .app-navigation_block .favorite-link_pin {
       position: relative; }
-      .header-navigation_block .favorite-link_pin:after {
+      .app-navigation_block .favorite-link_pin:after {
         content: '';
         width: 11px;
         height: 11px;
@@ -1409,6 +1570,10 @@ header nav {
 @media only all and (min-width: 0) and (max-width: 1023px) {
   footer .liquid {
     flex-direction: column; } }
+
+@media only all and (min-width: 0) and (max-width: 1023px) {
+  footer .communications {
+    text-align: center; } }
 
 @media only all and (min-width: 1024px) and (max-width: 1279px) {
   footer .logo-text {

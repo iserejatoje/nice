@@ -2,6 +2,14 @@
 @import "mixins";
 @import "fonts";
 
+.pure-btn {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+}
+
 .blue-btn {
   background: $blue;
   color: $white;
