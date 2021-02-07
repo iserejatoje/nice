@@ -22,13 +22,7 @@
   font-size: 16px;
   font-weight: $regular;
   letter-spacing: .7px;
-  &:hover {
-    svg {
-      transform: translateX(8px);
-    }
-  }
   svg {
-    transition: transform 280ms ease;
     fill: $white;
     margin-left: 20px;
     display: block;

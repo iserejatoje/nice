@@ -1070,10 +1070,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
   font-size: 16px;
   font-weight: 300;
   letter-spacing: .7px; }
-  .blue-btn:hover svg {
-    transform: translateX(8px); }
   .blue-btn svg {
-    transition: transform 280ms ease;
     fill: #fff;
     margin-left: 20px;
     display: block; }
