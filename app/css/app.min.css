@@ -1393,7 +1393,7 @@ nav a {
     display: inline-block; }
     @media only all and (min-width: 0) and (max-width: 1023px) {
       .logo .logo-link {
-        margin-right: 20px; } }
+        margin-right: 35px; } }
     .logo .logo-link svg {
       display: block;
       max-width: 100%;

@@ -473,7 +473,7 @@ nav {
   .logo-link {
     display: inline-block;
     @include respond(0, $mobile-breakpoint) {
-      margin-right: 20px;
+      margin-right: 35px;
     }
     svg {
       display: block;
