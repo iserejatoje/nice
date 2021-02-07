@@ -4,4 +4,4 @@ _Медицинское оборудование экспертного уров
 - [Контакты](https://iserejatoje.github.io/nice/contacts.html)
 - [Избранное (пустое)](https://iserejatoje.github.io/nice/favorite-0.html)
 
-Created with ❤ by Sergey Valitov
+Created with ❤
