@@ -23,11 +23,12 @@ body.menu-opened {
   overflow: auto;
 
   .app-navigation_block {
-    @include respond(1387px) {
-      padding: 44px 20px;
+    @include respond(400px) {
+      padding: 0 20px;
+      height: 115px;
     }
-    @include respond(0, 1387px) {
-      padding: 44px 0;
+    @include respond(0, 400px) {
+      height: 90px;
     }
   }
 

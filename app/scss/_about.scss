@@ -354,3 +354,97 @@
     }
   }
 }
+
+.customers-block {
+  @include respond($mobile-breakpoint) {
+    padding: 90px 0 158px 0;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    padding: 40px 0 60px 0;
+  }
+  .customers-list {
+    display: flex;
+
+    @include respond(0, $mobile-breakpoint) {
+      flex-wrap: wrap;
+    }
+  }
+  .customers-list_item {
+    padding-right: 40px;
+    font-weight: $regular;
+    font-size: 18px;
+    line-height: 1.722;
+    box-sizing: border-box;
+    @include respond(960px, $mobile-breakpoint) {
+      width: 50%;
+    }
+    @include respond(0, 960px) {
+      width: 100%;
+    }
+  }
+  .customers-grid_title {
+    font-size: 30px;
+    line-height: 1.433;
+    letter-spacing: .4px;
+    @include respond($mobile-breakpoint) {
+      margin-top: 92px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      margin-top: 42px;
+    }
+    font-weight: $regular;
+    margin-bottom: 44px;
+  }
+  .customers-grid {
+    display: grid;
+
+    @include respond(1100px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include respond(940px, 1100px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    grid-gap: 10px;
+  }
+  .customers-grid_cell {
+    @include respond($mobile-breakpoint) {
+      padding: 30px 40px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      padding: 18px 22px;
+    }
+    box-sizing: border-box;
+    background: $white;
+    box-shadow: 3px 3px 12px 0 transparentize($navy, .85);
+    @include respond(940px) {
+      height: 220px;
+    }
+    @include bg-transition;
+    &:hover {
+      background: $blue;
+      .customers-city,
+      .customers-text {
+        color: $white;
+      }
+    }
+  }
+  .customers-text {
+    font-weight: $regular;
+    line-height: 1.619;
+    @include color-transition;
+    @include respond($mobile-breakpoint) {
+      font-size: 21px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      font-size: 18px;
+    }
+  }
+  .customers-city {
+    font-weight: $light;
+    font-size: 16px;
+    color: $gray-font;
+    line-height: 1.813;
+    @include color-transition;
+    margin-bottom: 14px;
+  }
+}
