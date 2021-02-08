@@ -1,0 +1,346 @@
+@import "variables";
+@import "mixins";
+
+.history-block {
+
+  @include respond($mobile-breakpoint) {
+    padding-top: 90px;
+    padding-bottom: 122px;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+
+  .history-block_items {
+    @include respond($mobile-breakpoint) {
+      padding-top: 38px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      padding-top: 20px;
+    }
+
+    .history-row {
+      @include respond($mobile-breakpoint) {
+        display: flex;
+      }
+
+      &:not(:last-child) {
+        @include respond($mobile-breakpoint) {
+          margin-bottom: 85px;
+        }
+        @include respond(0, $mobile-breakpoint) {
+          margin-bottom: 45px;
+        }
+      }
+    }
+  }
+
+  .history-item_comma {
+    height: 1px;
+    width: 90px;
+    background: transparentize($navy, .7);
+    @include respond(0, $mobile-breakpoint) {
+      display: none;
+    }
+    @include respond(1150px) {
+      margin-left: 64px;
+      margin-right: 64px;
+    }
+    @include respond(0, 1150px) {
+      margin-left: 35px;
+      margin-right: 35px;
+    }
+    transform: translateY(36px);
+  }
+
+  .history-item_content {
+    flex: 1;
+    @include respond(0, $mobile-breakpoint) {
+      padding-top: 25px;
+    }
+  }
+
+  .history-item_year {
+    @include respond(0, 1150px) {
+      font-size: 97px;
+      max-width: 255px;
+    }
+    @include respond(1150px) {
+      font-size: 130px;
+      max-width: 334px;
+    }
+    color: $history-gray;
+    line-height: 0.733;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .history-item-title {
+    font-size: 27px;
+    color: $navy;
+    text-transform: uppercase;
+    line-height: 1.556;
+    letter-spacing: .25px;
+    margin-bottom: 14px;
+    max-width: 655px;
+  }
+
+  .history-item-description {
+    font-size: 18px;
+    font-weight: $regular;
+    color: $navy;
+    line-height: 1.722;
+    max-width: 600px;
+  }
+}
+
+.quote-svg {
+  fill: $blue;
+  position: absolute;
+  top: 6px;
+  right: calc(100% + 18px);
+}
+
+.mission-block {
+  @include respond($mobile-breakpoint) {
+    padding: 90px 0 132px 0;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    padding: 40px 0 50px 0;
+  }
+
+  .mission-columns {
+    @include respond($mobile-breakpoint) {
+      display: flex;
+    }
+  }
+
+  .mission-column {
+    &:first-child {
+      font-size: 18px;
+      color: transparentize($navy, .35);
+      line-height: 1.722;
+      font-weight: $light;
+      width: 100%;
+      @include respond($mobile-breakpoint) {
+        max-width: 552px;
+        box-sizing: border-box;
+        flex: 1;
+        padding-right: 105px;
+      }
+    }
+
+    &:last-child {
+      position: relative;
+      font-size: 21px;
+      color: $navy;
+      font-weight: $regular;
+      line-height: 1.619;
+      @include respond($mobile-breakpoint) {
+        flex: 1;
+      }
+      @include respond(0, $mobile-breakpoint) {
+        margin-left: 48px;
+        margin-top: 25px;
+      }
+    }
+  }
+}
+
+.objectives-block {
+  background: $navy;
+  @include respond($mobile-breakpoint) {
+    padding: 86px 0 165px 0;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    padding: 40px 0 60px 0;
+  }
+
+  .heading {
+    color: $white;
+  }
+
+  .objectives-columns {
+    @include respond($mobile-breakpoint) {
+      display: flex;
+    }
+  }
+
+  .objectives-column {
+    &:first-child {
+      font-size: 18px;
+      color: $white;
+      line-height: 1.722;
+      font-weight: $light;
+      @include respond($mobile-breakpoint) {
+        width: 100%;
+        padding-right: 125px;
+        max-width: 552px;
+        box-sizing: border-box;
+        flex: 1;
+      }
+    }
+
+    &:last-child {
+      position: relative;
+      font-size: 18px;
+      color: $white;
+      font-weight: $regular;
+      line-height: 1.722;
+
+      @include respond($mobile-breakpoint) {
+        padding-right: 80px;
+        box-sizing: border-box;
+        flex: 1;
+      }
+    }
+  }
+}
+
+.hexagon {
+  position: relative;
+  width: 105px;
+  height: 60.62px;
+  background-color: $white;
+  margin: 30.31px 0;
+  box-shadow: 0 30px 54px 6px rgba(9, 47, 87, 0.08);
+  transition: background-color 200ms ease, box-shadow 200ms ease;
+  svg {
+    transition: fill 200ms ease;
+    fill: $blue;
+  }
+  &:hover {
+    background: $blue;
+    box-shadow: none;
+    svg {
+      fill: $white;
+    }
+  }
+}
+
+.hexagon:before,
+.hexagon:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 74.25px;
+  height: 74.25px;
+  transform: scaleY(0.5774) rotate(-45deg);
+  background-color: inherit;
+  left: 15.3769px;
+  box-shadow: 0 30px 54px 6px rgba(9, 47, 87, 0.08);
+}
+
+.hexagon:before {
+  top: -37.1231px;
+}
+
+.hexagon:after {
+  bottom: -37.1231px;
+}
+
+.hexagon span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 105px;
+  height: 60.6218px;
+  z-index: 2;
+  background: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.advantages-block {
+  @include respond($mobile-breakpoint) {
+    padding: 90px 0 105px 0;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    padding: 40px 0 60px 0;
+  }
+  .advantages-items {
+    padding-top: 36px;
+    display: grid;
+    @include respond(1180px) {
+      grid-template-columns: repeat(4, 1fr);
+      grid-row-gap: 58px;
+    }
+    @include respond(920px, 1180px) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-row-gap: 58px;
+    }
+    @include respond(640px, 920px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-row-gap: 58px;
+    }
+    @include respond(0, 640px) {
+      grid-template-columns: 1fr;
+      grid-row-gap: 35px;
+    }
+  }
+  .advantage-title {
+    padding-top: 25px;
+    font-weight: $regular;
+    line-height: 1.722;
+    font-size: 18px;
+    max-width: 260px;
+    span {
+      font-weight: $medium;
+    }
+  }
+}
+
+.partner-block {
+  background: $navy;
+  @include respond($mobile-breakpoint) {
+    padding: 86px 0 127px 0;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    padding: 40px 0 60px 0;
+  }
+  text-align: center;
+  .marker-line {
+    &:before {
+      transform: translateY(-5px);
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  .partner-title {
+    @include respond($mobile-breakpoint) {
+      font-size: 42px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      font-size: 34px;
+    }
+    font-weight: $regular;
+    color: $white;
+    letter-spacing: .4px;
+    margin-bottom: 34px;
+  }
+  .partner-description {
+    font-size: 18px;
+    font-weight: $light;
+    color: $white;
+    margin-bottom: 38px;
+  }
+  .partner-email_link {
+    @include respond($mobile-breakpoint) {
+      font-size: 40px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      font-size: 26px;
+    }
+    color: $white;
+    font-weight: $bold;
+    @include link-style;
+    letter-spacing: 1px;
+    @include color-transition;
+    &:hover {
+      color: $blue;
+    }
+  }
+}

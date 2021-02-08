@@ -11,17 +11,6 @@
     padding-bottom: 45px;
     padding-top: 40px;
   }
-  .favorite-heading {
-    @include respond($mobile-breakpoint) {
-      font-size: 48px;
-    }
-    @include respond(0, $mobile-breakpoint) {
-      font-size: 36px;
-    }
-    font-weight: $regular;
-    letter-spacing: .5px;
-    margin-bottom: 28px;
-  }
   .favorite-subheading {
     font-size: 18px;
     font-weight: $light;

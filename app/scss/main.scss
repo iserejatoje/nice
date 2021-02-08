@@ -4,7 +4,9 @@
 @import "buttons";
 @import "favorite";
 @import "mixins";
+@import "commercial-offer";
 @import "menu";
+@import "about";
 
 .skip-link {
   position: absolute;
@@ -14,6 +16,18 @@
   color: $white;
   padding: 8px;
   z-index: 100;
+}
+
+.heading {
+  @include respond($mobile-breakpoint) {
+    font-size: 48px;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    font-size: 36px;
+  }
+  font-weight: $regular;
+  letter-spacing: .5px;
+  margin-bottom: 28px;
 }
 
 .burger {
@@ -431,6 +445,20 @@ nav {
   display: flex;
   align-items: center;
   position: relative;
+}
+
+.marker-line {
+  position: relative;
+  margin-top: 16px;
+  display: inline-block;
+  &:before {
+    content: '';
+    height: 1px;
+    width: 60px;
+    display: block;
+    background: $blue;
+    margin-bottom: 24px;
+  }
 }
 
 .asphalt {

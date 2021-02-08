@@ -38,6 +38,7 @@ img.leaflet-marker-icon {
 }
 
 /* Safari renders non-retina tile on retina better with this, but Chrome is worse */
+//noinspection CssInvalidPropertyValue
 .leaflet-safari .leaflet-tile {
   image-rendering: -webkit-optimize-contrast;
 }
@@ -460,11 +461,6 @@ svg.leaflet-image-layer.leaflet-interactive path {
   height: 0;
   border-top: 1px solid #ddd;
   margin: 5px -10px 5px -6px;
-}
-
-/* Default icon URLs */
-.leaflet-default-icon-path {
-  background-image: url(images/marker-icon.png);
 }
 
 /* attribution and scale controls */
