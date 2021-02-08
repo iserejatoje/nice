@@ -62,9 +62,13 @@
   }
 
   .history-item_year {
-    @include respond(0, 1150px) {
+    @include respond($mobile-breakpoint, 1150px) {
       font-size: 97px;
       max-width: 255px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      font-size: 70px;
+      max-width: 188px;
     }
     @include respond(1150px) {
       font-size: 130px;
@@ -78,7 +82,12 @@
   }
 
   .history-item-title {
-    font-size: 27px;
+    @include respond($mobile-breakpoint) {
+      font-size: 27px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      font-size: 20px;
+    }
     color: $navy;
     text-transform: uppercase;
     line-height: 1.556;
@@ -296,7 +305,7 @@
 .partner-block {
   background: $navy;
   @include respond($mobile-breakpoint) {
-    padding: 86px 0 127px 0;
+    padding: 83px 0 127px 0;
   }
   @include respond(0, $mobile-breakpoint) {
     padding: 40px 0 60px 0;
@@ -304,7 +313,6 @@
   text-align: center;
   .marker-line {
     &:before {
-      transform: translateY(-5px);
       margin-left: auto;
       margin-right: auto;
     }
@@ -319,13 +327,15 @@
     font-weight: $regular;
     color: $white;
     letter-spacing: .4px;
-    margin-bottom: 34px;
+    line-height: 1.333;
+    margin-bottom: 26px;
   }
   .partner-description {
     font-size: 18px;
     font-weight: $light;
     color: $white;
-    margin-bottom: 38px;
+    line-height: 1.722;
+    margin-bottom: 33px;
   }
   .partner-email_link {
     @include respond($mobile-breakpoint) {

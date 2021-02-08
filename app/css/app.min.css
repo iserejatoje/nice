@@ -1286,23 +1286,32 @@ body.menu-opened {
   width: 100%;
   display: flex;
   justify-content: space-between; }
-  @media only all and (min-width: 0) and (max-width: 1149px) {
+  @media only all and (min-width: 1024px) and (max-width: 1149px) {
     .history-block .history-item_year {
       font-size: 97px;
       max-width: 255px; } }
+  @media only all and (min-width: 0) and (max-width: 1023px) {
+    .history-block .history-item_year {
+      font-size: 70px;
+      max-width: 188px; } }
   @media only all and (min-width: 1150px) {
     .history-block .history-item_year {
       font-size: 130px;
       max-width: 334px; } }
 
 .history-block .history-item-title {
-  font-size: 27px;
   color: #092f57;
   text-transform: uppercase;
   line-height: 1.556;
   letter-spacing: .25px;
   margin-bottom: 14px;
   max-width: 655px; }
+  @media only all and (min-width: 1024px) {
+    .history-block .history-item-title {
+      font-size: 27px; } }
+  @media only all and (min-width: 0) and (max-width: 1023px) {
+    .history-block .history-item-title {
+      font-size: 20px; } }
 
 .history-block .history-item-description {
   font-size: 18px;
@@ -1482,19 +1491,19 @@ body.menu-opened {
   text-align: center; }
   @media only all and (min-width: 1024px) {
     .partner-block {
-      padding: 86px 0 127px 0; } }
+      padding: 83px 0 127px 0; } }
   @media only all and (min-width: 0) and (max-width: 1023px) {
     .partner-block {
       padding: 40px 0 60px 0; } }
   .partner-block .marker-line:before {
-    transform: translateY(-5px);
     margin-left: auto;
     margin-right: auto; }
   .partner-block .partner-title {
     font-weight: 300;
     color: #fff;
     letter-spacing: .4px;
-    margin-bottom: 34px; }
+    line-height: 1.333;
+    margin-bottom: 26px; }
     @media only all and (min-width: 1024px) {
       .partner-block .partner-title {
         font-size: 42px; } }
@@ -1505,7 +1514,8 @@ body.menu-opened {
     font-size: 18px;
     font-weight: 300;
     color: #fff;
-    margin-bottom: 38px; }
+    line-height: 1.722;
+    margin-bottom: 33px; }
   .partner-block .partner-email_link {
     color: #fff;
     font-weight: bold;
