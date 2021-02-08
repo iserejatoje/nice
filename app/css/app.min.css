@@ -1058,7 +1058,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
   background: #0090f0;
   color: #fff;
   height: 60px;
-  padding: 0 29px 0 36px;
+  padding: 0 31px 0 36px;
   display: inline-flex;
   align-items: center;
   border-radius: 40px;
@@ -1068,7 +1068,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
   letter-spacing: .7px; }
   .blue-btn svg {
     fill: #fff;
-    margin-left: 20px;
+    margin-left: 18px;
     display: block; }
 
 .favorite-block {
@@ -1621,6 +1621,61 @@ body.menu-opened {
   transition: color 200ms ease;
   margin-bottom: 14px; }
 
+@media only all and (min-width: 1024px) {
+  .documents-block {
+    padding: 82px 0 135px 0; } }
+
+@media only all and (min-width: 0) and (max-width: 1023px) {
+  .documents-block {
+    padding: 40px 0 60px 0; } }
+
+.documents-block .documents-grid {
+  display: grid;
+  grid-gap: 25px;
+  margin-bottom: 60px;
+  padding-top: 20px; }
+  @media only all and (min-width: 1024px) {
+    .documents-block .documents-grid {
+      grid-template-columns: repeat(2, 1fr); } }
+
+.documents-block .documents-format {
+  color: #929ba9; }
+
+.documents-block .documents-title {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.875; }
+
+.documents-block .documents-grid_item {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #092f57; }
+  .documents-block .documents-grid_item:hover .documents-icon {
+    background: #0090f0;
+    border-color: #0090f0;
+    color: #fff; }
+    .documents-block .documents-grid_item:hover .documents-icon span {
+      border-bottom: 1px solid #fff; }
+
+.documents-block .documents-icon {
+  transition: color 200ms ease, background 200ms ease, border-color 200ms ease;
+  min-width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #c8cdd4;
+  text-align: center;
+  margin-right: 18px; }
+  .documents-block .documents-icon span {
+    transition: border-color 200ms ease;
+    border-bottom: 1px solid #0090f0;
+    font-weight: 300;
+    font-size: 17px;
+    text-transform: uppercase;
+    padding-bottom: 2px; }
+
 .skip-link {
   position: absolute;
   top: -40px;
@@ -1679,7 +1734,8 @@ html {
 
 body {
   font-family: Stem, sans-serif;
-  color: #092f57; }
+  color: #092f57;
+  background: #fff; }
 
 @media only all and (min-width: 1024px) {
   .map-wrapper {
