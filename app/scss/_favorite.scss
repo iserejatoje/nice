@@ -21,6 +21,41 @@
     @include respond(0, $mobile-breakpoint) {
       margin-bottom: 35px;
     }
-
   }
+}
+
+.favorite-grid {
+  display: grid;
+  grid-gap: 30px;
+  @include respond(1110px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include respond(760px, 1110px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include respond(0, 760px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  padding-top: 23px;
+  .product-card {
+    background: $white;
+    min-height: 620px;
+  }
+}
+
+.favorite-links {
+  @include respond(800px) {
+    a:first-child {
+      margin-right: 20px;
+    }
+  }
+  @include respond(0, 800px) {
+    flex-direction: column;
+    a:first-child {
+      margin-bottom: 20px;
+    }
+  }
+  display: flex;
+  margin-top: 60px;
+
 }
