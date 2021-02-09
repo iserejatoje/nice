@@ -1873,7 +1873,8 @@ body.menu-opened {
     font-size: 15px;
     color: #929ba9;
     font-weight: 300;
-    line-height: 2.067; }
+    line-height: 2.067;
+    text-decoration: none; }
 
 .skip-link {
   position: absolute;

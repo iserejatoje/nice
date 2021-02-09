@@ -179,6 +179,7 @@
       color: $gray-font;
       font-weight: $regular;
       line-height: 2.067;
+      @include link-style;
     }
   }
 }
