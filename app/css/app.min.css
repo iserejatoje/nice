@@ -1676,6 +1676,104 @@ body.menu-opened {
     text-transform: uppercase;
     padding-bottom: 2px; }
 
+@media only all and (min-width: 1024px) {
+  .catalog-block {
+    padding: 62px 0 136px 0; } }
+
+@media only all and (min-width: 0) and (max-width: 1023px) {
+  .catalog-block {
+    padding: 40px 0 60px 0; } }
+
+.catalog-block .manufacturer-heading {
+  margin-bottom: 23px; }
+
+.catalog-block .catalog-grid {
+  margin-top: 36px; }
+
+.catalog-grid {
+  display: grid;
+  grid-column-gap: 30px;
+  grid-row-gap: 68px; }
+  @media only all and (min-width: 900px) {
+    .catalog-grid {
+      grid-template-columns: 1fr 1fr; } }
+  .catalog-grid .catalog-cell_image {
+    height: 355px;
+    overflow: hidden;
+    text-align: center;
+    background: #f3f3f6;
+    display: block;
+    padding: 15px;
+    box-sizing: border-box; }
+    .catalog-grid .catalog-cell_image img {
+      transform: translateY(40px);
+      display: inline-block;
+      max-width: 100%; }
+  .catalog-grid .catalog-cell_categories {
+    font-weight: 300;
+    margin-bottom: 33px;
+    color: #929ba9;
+    line-height: 1.813; }
+    .catalog-grid .catalog-cell_categories a {
+      text-decoration: none;
+      letter-spacing: .1px;
+      transition: color 200ms ease, border 200ms ease;
+      padding-bottom: 3px;
+      color: #929ba9;
+      border-bottom: 1px solid #fff; }
+      .catalog-grid .catalog-cell_categories a:hover {
+        color: #092f57;
+        border-bottom: 1px solid; }
+  .catalog-grid .catalog-cell_title {
+    font-size: 27px;
+    text-transform: uppercase;
+    line-height: 1.556;
+    font-weight: 500;
+    color: #092f57;
+    text-decoration: none;
+    transition: color 200ms ease;
+    margin: 23px 0 15px 0;
+    display: inline-block;
+    letter-spacing: .7px; }
+    .catalog-grid .catalog-cell_title:hover {
+      color: #0090f0; }
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap; }
+  @media only all and (min-width: 760px) and (max-width: 939px) {
+    .tabs {
+      justify-content: space-between; } }
+
+.blue-btn_tab {
+  box-sizing: border-box;
+  margin-bottom: 25px;
+  background: #fff;
+  color: rgba(9, 47, 87, 0.5);
+  text-decoration: none;
+  height: 50px;
+  border: 1px solid #c8cdd4;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  letter-spacing: 1px;
+  border-radius: 30px;
+  transition: background-color 200ms ease, border 200ms ease, color 200ms ease; }
+  .blue-btn_tab:hover, .blue-btn_tab.active {
+    background: #0090f0;
+    border-color: #0090f0;
+    color: #fff; }
+  @media only all and (min-width: 760px) and (max-width: 939px) {
+    .blue-btn_tab {
+      width: calc(50% - 10px); } }
+  @media only all and (min-width: 0) and (max-width: 759px) {
+    .blue-btn_tab {
+      width: 100%; } }
+  @media only all and (min-width: 940px) {
+    .blue-btn_tab:not(:last-child) {
+      margin-right: 20px; } }
+
 .skip-link {
   position: absolute;
   top: -40px;
@@ -1688,7 +1786,7 @@ body.menu-opened {
 .heading {
   font-weight: 300;
   letter-spacing: .5px;
-  margin-bottom: 28px; }
+  margin-bottom: 24px; }
   @media only all and (min-width: 1024px) {
     .heading {
       font-size: 48px; } }
@@ -1736,6 +1834,11 @@ body {
   font-family: Stem, sans-serif;
   color: #092f57;
   background: #fff; }
+
+.heading-medium {
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 1.867; }
 
 @media only all and (min-width: 1024px) {
   .map-wrapper {
@@ -2091,6 +2194,43 @@ nav a {
     @media only all and (min-width: 0) and (max-width: 1023px) {
       .page-panel .page-description {
         font-size: 18px; } }
+
+.detail-link {
+  color: #092f57;
+  text-decoration: none;
+  letter-spacing: .8px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 16px; }
+  .detail-link svg {
+    margin-left: 20px; }
+
+@media only all and (min-width: 1024px) {
+  .seo-block {
+    padding: 90px 0 138px 0; } }
+
+@media only all and (min-width: 0) and (max-width: 1023px) {
+  .seo-block {
+    padding: 40px 0 60px 0; } }
+
+.seo-block .seo-subheading {
+  font-size: 21px;
+  font-weight: 300;
+  line-height: 1.7;
+  margin-bottom: 13px; }
+
+.seo-block .seo-text {
+  font-weight: 300;
+  color: rgba(9, 47, 87, 0.65);
+  line-height: 1.722;
+  margin-bottom: 30px; }
+  @media only all and (min-width: 1024px) {
+    .seo-block .seo-text {
+      padding-right: 108px;
+      font-size: 18px; } }
+  @media only all and (min-width: 0) and (max-width: 1023px) {
+    .seo-block .seo-text {
+      font-size: 16px; } }
 
 .breadcrumbs {
   display: inline-flex;

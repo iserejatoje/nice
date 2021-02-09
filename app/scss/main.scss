@@ -8,6 +8,7 @@
 @import "menu";
 @import "about";
 @import "documents";
+@import "catalog";
 
 .skip-link {
   position: absolute;
@@ -28,7 +29,7 @@
   }
   font-weight: $regular;
   letter-spacing: .5px;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 
 .burger {
@@ -81,6 +82,12 @@ body {
   font-family: Stem, sans-serif;
   color: $navy;
   background: $white;
+}
+
+.heading-medium {
+  font-size: 30px;
+  font-weight: $regular;
+  line-height: 1.867;
 }
 
 .map-wrapper {
@@ -511,6 +518,46 @@ nav {
     }
     font-weight: $regular;
     line-height: 1.667;
+  }
+}
+
+.detail-link {
+  color: $navy;
+  @include link-style;
+  letter-spacing: .8px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 16px;
+  svg {
+    margin-left: 20px;
+  }
+}
+
+.seo-block {
+  @include respond($mobile-breakpoint) {
+    padding: 90px 0 138px 0;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    padding: 40px 0 60px 0;
+  }
+  .seo-subheading {
+    font-size: 21px;
+    font-weight: $regular;
+    line-height: 1.7;
+    margin-bottom: 13px;
+  }
+  .seo-text {
+    font-weight: $light;
+    color: transparentize($navy, .35);
+    line-height: 1.722;
+    margin-bottom: 30px;
+    @include respond($mobile-breakpoint) {
+      padding-right: 108px;
+      font-size: 18px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      font-size: 16px;
+    }
   }
 }
 
