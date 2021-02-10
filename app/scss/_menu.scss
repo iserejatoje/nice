@@ -1,14 +1,87 @@
 @import "variables";
 @import "mixins";
 
+body.search-opened {
+  .app-navigation_block-links {
+    display: none;
+  }
+  .menu-content {
+    display: none;
+  }
+  .menu {
+    .close-button {
+      margin-left: auto;
+    }
+  }
+}
+
+.search-btn {
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-block {
+  padding-top: 65px;
+  border-bottom: 2px solid $white;
+  .search-form {
+    display: flex;
+    align-items: center;
+    svg {
+      display: block;
+      fill: $white;
+    }
+  }
+  input {
+    background: transparent;
+    border: none;
+    width: 100%;
+    outline: 0;
+    @include respond($mobile-breakpoint) {
+      font-size: 24px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      font-size: 18px;
+    }
+    font-weight: $regular;
+    line-height: 2.8;
+    color: $white;
+    padding: 0 8px;
+    &::placeholder {
+      color: $gray-font;
+    }
+  }
+}
+
+body.search-opened,
 body.menu-opened {
   overflow: hidden;
   .menu {
     display: block;
+  }
+}
+
+body.menu-opened {
+  .search-block {
+    display: none;
+  }
+  .menu {
     .close-button {
       margin-right: auto;
     }
   }
+}
+
+.app-navigation_block-links {
+  display: flex;
+  align-items: center;
 }
 
 .menu {

@@ -4,7 +4,11 @@ jQuery(function ($) {
     });
 
     $('.close-button').click(function() {
-        $('body').removeClass('menu-opened');
+        $('body').removeClass('menu-opened search-opened');
+    });
+
+    $('.search-link').click(function() {
+        $('body').addClass('search-opened').removeClass('menu-opened');
     });
 
     if ($('#map').length > 0) {

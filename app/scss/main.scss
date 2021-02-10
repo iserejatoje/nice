@@ -299,24 +299,26 @@ header {
   svg {
     display: block;
   }
-  .magnifying-icon {
-    transform: scale(-1, 1);
-  }
-  .favorite-link {
-    margin-right: 30px;
-    &_pin {
-      position: relative;
-      &:after {
-        content: '';
-        width: 11px;
-        height: 11px;
-        background: $blue;
-        border-radius: 50%;
-        display: block;
-        position: absolute;
-        bottom: 4px;
-        right: 1px;
-      }
+}
+
+.magnifying-icon {
+  transform: scale(-1, 1);
+}
+
+.favorite-link {
+  margin-right: 30px;
+  &_pin {
+    position: relative;
+    &:after {
+      content: '';
+      width: 11px;
+      height: 11px;
+      background: $blue;
+      border-radius: 50%;
+      display: block;
+      position: absolute;
+      bottom: 4px;
+      right: 1px;
     }
   }
 }
@@ -531,6 +533,14 @@ nav {
   svg {
     margin-left: 20px;
   }
+}
+
+.search-link {
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+  cursor: pointer;
 }
 
 .seo-block {

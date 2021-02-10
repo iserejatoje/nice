@@ -54,7 +54,7 @@
 
                     <div class="app-navigation_block app-navigation_block--navy">
                         <a href="#" class="favorite-link favorite-link_pin" aria-label="Избранное"><svg width="27" height="27" class="heart-icon"><use xlink:href="app/img/sprite.svg#heart"></use></svg></a>
-                        <a href="#" class="search-link" aria-label="Поиск по сайту"><svg width="23" height="23" class="magnifying-icon"><use xlink:href="app/img/sprite.svg#magnifying-glass"></use></svg></a>
+                        <button class="search-link" aria-label="Поиск по сайту"><svg width="23" height="23" class="magnifying-icon"><use xlink:href="app/img/sprite.svg#magnifying-glass"></use></svg></button>
                     </div>
 
                     <button class="burger" aria-label="Меню">
@@ -218,11 +218,19 @@
     <div class="container-fluid">
         <div class="app-navigation_block app-navigation_block--white">
             <button class="pure-btn close-button" aria-label="Закрыть меню"><svg width="26" height="26"><use xlink:href="app/img/sprite.svg#close"></use></svg></button>
-            <a href="#" class="favorite-link favorite-link_pin" aria-label="Избранное"><svg width="27" height="27" class="heart-icon"><use xlink:href="app/img/sprite.svg#heart"></use></svg></a>
-            <a href="#" class="search-link" aria-label="Поиск по сайту"><svg width="23" height="23" class="magnifying-icon"><use xlink:href="app/img/sprite.svg#magnifying-glass"></use></svg></a>
+            <div class="app-navigation_block-links">
+                <a href="#" class="favorite-link favorite-link_pin" aria-label="Избранное"><svg width="27" height="27" class="heart-icon"><use xlink:href="app/img/sprite.svg#heart"></use></svg></a>
+                <button class="search-link" aria-label="Поиск по сайту"><svg width="23" height="23" class="magnifying-icon"><use xlink:href="app/img/sprite.svg#magnifying-glass"></use></svg></button>
+            </div>
         </div>
     </div>
     <div class="container">
+        <div class="search-block">
+            <form action="/" method="get" class="search-form" autocomplete="off">
+                <input type="text" name="q" placeholder="Поиск НАЙС">
+                <button type="submit" class="search-btn" aria-label="Поиск по сайту"><svg width="25" height="25" class="magnifying-icon"><use xlink:href="app/img/sprite.svg#magnifying-glass"></use></svg></button>
+            </form>
+        </div>
         <div class="menu-content">
             <div class="menu-content_column">
                 <div class="menu-list-title">
