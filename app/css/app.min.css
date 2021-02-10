@@ -308,56 +308,64 @@ template {
   src: url("../fonts/OpenSans-Bold.eot");
   src: url("../fonts/OpenSans-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-Bold.woff") format("woff"), url("../fonts/OpenSans-Bold.ttf") format("truetype");
   font-weight: normal;
-  font-style: normal; }
+  font-style: normal;
+  font-display: swap; }
 
 @font-face {
   font-family: 'Stem';
   src: url("../fonts/Stem-Light.eot");
   src: local("Stem Light"), local("Stem-Light"), url("../fonts/Stem-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/Stem-Light.woff2") format("woff2"), url("../fonts/Stem-Light.woff") format("woff"), url("../fonts/Stem-Light.ttf") format("truetype");
   font-weight: 300;
-  font-style: normal; }
+  font-style: normal;
+  font-display: swap; }
 
 @font-face {
   font-family: 'Stem';
   src: url("../fonts/Stem-Medium.eot");
   src: local("Stem Medium"), local("Stem-Medium"), url("../fonts/Stem-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/Stem-Medium.woff2") format("woff2"), url("../fonts/Stem-Medium.woff") format("woff"), url("../fonts/Stem-Medium.ttf") format("truetype");
   font-weight: 500;
-  font-style: normal; }
+  font-style: normal;
+  font-display: swap; }
 
 @font-face {
   font-family: 'Stem';
   src: url("../fonts/Stem-Bold.eot");
   src: local("Stem Bold"), local("Stem-Bold"), url("../fonts/Stem-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Stem-Bold.woff2") format("woff2"), url("../fonts/Stem-Bold.woff") format("woff"), url("../fonts/Stem-Bold.ttf") format("truetype");
   font-weight: bold;
-  font-style: normal; }
+  font-style: normal;
+  font-display: swap; }
 
 @font-face {
   font-family: 'Stem';
   src: url("../fonts/Stem-SemiLight.eot");
   src: local("Stem Semi Light"), local("Stem-SemiLight"), url("../fonts/Stem-SemiLight.eot?#iefix") format("embedded-opentype"), url("../fonts/Stem-SemiLight.woff2") format("woff2"), url("../fonts/Stem-SemiLight.woff") format("woff"), url("../fonts/Stem-SemiLight.ttf") format("truetype");
   font-weight: 300;
-  font-style: normal; }
+  font-style: normal;
+  font-display: swap; }
 
 @font-face {
   font-family: 'Stem';
   src: url("../fonts/Stem-ExtraLight.eot");
   src: local("Stem Extra Light"), local("Stem-ExtraLight"), url("../fonts/Stem-ExtraLight.eot?#iefix") format("embedded-opentype"), url("../fonts/Stem-ExtraLight.woff2") format("woff2"), url("../fonts/Stem-ExtraLight.woff") format("woff"), url("../fonts/Stem-ExtraLight.ttf") format("truetype");
   font-weight: 200;
-  font-style: normal; }
+  font-style: normal;
+  font-display: swap; }
 
 @font-face {
   font-family: 'Stem';
   src: url("../fonts/Stem-Thin.eot");
   src: local("Stem Thin"), local("Stem-Thin"), url("../fonts/Stem-Thin.eot?#iefix") format("embedded-opentype"), url("../fonts/Stem-Thin.woff2") format("woff2"), url("../fonts/Stem-Thin.woff") format("woff"), url("../fonts/Stem-Thin.ttf") format("truetype");
   font-weight: 100;
-  font-style: normal; }
+  font-style: normal;
+  font-display: swap; }
 
 @font-face {
   font-family: 'Stem';
   src: url("../fonts/Stem-Regular.eot");
   src: local("Stem Regular"), local("Stem-Regular"), url("../fonts/Stem-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Stem-Regular.woff2") format("woff2"), url("../fonts/Stem-Regular.woff") format("woff"), url("../fonts/Stem-Regular.ttf") format("truetype");
   font-weight: bold;
-  font-style: normal; }
+  font-style: normal;
+  font-display: swap; }
 
 /* required styles */
 .leaflet-pane,
@@ -996,56 +1004,64 @@ svg.leaflet-image-layer.leaflet-interactive path {
   src: url("../fonts/OpenSans-Bold.eot");
   src: url("../fonts/OpenSans-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-Bold.woff") format("woff"), url("../fonts/OpenSans-Bold.ttf") format("truetype");
   font-weight: normal;
-  font-style: normal; }
+  font-style: normal;
+  font-display: swap; }
 
 @font-face {
   font-family: 'Stem';
   src: url("../fonts/Stem-Light.eot");
   src: local("Stem Light"), local("Stem-Light"), url("../fonts/Stem-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/Stem-Light.woff2") format("woff2"), url("../fonts/Stem-Light.woff") format("woff"), url("../fonts/Stem-Light.ttf") format("truetype");
   font-weight: 300;
-  font-style: normal; }
+  font-style: normal;
+  font-display: swap; }
 
 @font-face {
   font-family: 'Stem';
   src: url("../fonts/Stem-Medium.eot");
   src: local("Stem Medium"), local("Stem-Medium"), url("../fonts/Stem-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/Stem-Medium.woff2") format("woff2"), url("../fonts/Stem-Medium.woff") format("woff"), url("../fonts/Stem-Medium.ttf") format("truetype");
   font-weight: 500;
-  font-style: normal; }
+  font-style: normal;
+  font-display: swap; }
 
 @font-face {
   font-family: 'Stem';
   src: url("../fonts/Stem-Bold.eot");
   src: local("Stem Bold"), local("Stem-Bold"), url("../fonts/Stem-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Stem-Bold.woff2") format("woff2"), url("../fonts/Stem-Bold.woff") format("woff"), url("../fonts/Stem-Bold.ttf") format("truetype");
   font-weight: bold;
-  font-style: normal; }
+  font-style: normal;
+  font-display: swap; }
 
 @font-face {
   font-family: 'Stem';
   src: url("../fonts/Stem-SemiLight.eot");
   src: local("Stem Semi Light"), local("Stem-SemiLight"), url("../fonts/Stem-SemiLight.eot?#iefix") format("embedded-opentype"), url("../fonts/Stem-SemiLight.woff2") format("woff2"), url("../fonts/Stem-SemiLight.woff") format("woff"), url("../fonts/Stem-SemiLight.ttf") format("truetype");
   font-weight: 300;
-  font-style: normal; }
+  font-style: normal;
+  font-display: swap; }
 
 @font-face {
   font-family: 'Stem';
   src: url("../fonts/Stem-ExtraLight.eot");
   src: local("Stem Extra Light"), local("Stem-ExtraLight"), url("../fonts/Stem-ExtraLight.eot?#iefix") format("embedded-opentype"), url("../fonts/Stem-ExtraLight.woff2") format("woff2"), url("../fonts/Stem-ExtraLight.woff") format("woff"), url("../fonts/Stem-ExtraLight.ttf") format("truetype");
   font-weight: 200;
-  font-style: normal; }
+  font-style: normal;
+  font-display: swap; }
 
 @font-face {
   font-family: 'Stem';
   src: url("../fonts/Stem-Thin.eot");
   src: local("Stem Thin"), local("Stem-Thin"), url("../fonts/Stem-Thin.eot?#iefix") format("embedded-opentype"), url("../fonts/Stem-Thin.woff2") format("woff2"), url("../fonts/Stem-Thin.woff") format("woff"), url("../fonts/Stem-Thin.ttf") format("truetype");
   font-weight: 100;
-  font-style: normal; }
+  font-style: normal;
+  font-display: swap; }
 
 @font-face {
   font-family: 'Stem';
   src: url("../fonts/Stem-Regular.eot");
   src: local("Stem Regular"), local("Stem-Regular"), url("../fonts/Stem-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Stem-Regular.woff2") format("woff2"), url("../fonts/Stem-Regular.woff") format("woff"), url("../fonts/Stem-Regular.ttf") format("truetype");
   font-weight: bold;
-  font-style: normal; }
+  font-style: normal;
+  font-display: swap; }
 
 .pure-btn {
   background: transparent;
