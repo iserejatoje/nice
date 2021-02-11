@@ -9,6 +9,7 @@
 @import "about";
 @import "documents";
 @import "catalog";
+@import "geography";
 
 .skip-link {
   position: absolute;
@@ -466,7 +467,13 @@ nav {
     width: 60px;
     display: block;
     background: $blue;
-    margin-bottom: 24px;
+
+    @include respond($mobile-breakpoint) {
+      margin-bottom: 24px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      margin-bottom: 18px;
+    }
   }
 }
 

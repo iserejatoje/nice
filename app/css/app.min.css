@@ -1956,6 +1956,168 @@ body.menu-opened .menu .close-button {
     .products-wrapper .product-card .product-brand:hover {
       color: #0090f0; }
 
+.geography-block {
+  box-sizing: border-box; }
+  @media only all and (min-width: 1024px) {
+    .geography-block {
+      padding: 90px 0 75px 0; } }
+  @media only all and (min-width: 0) and (max-width: 1023px) {
+    .geography-block {
+      padding: 40px 0 60px 0; } }
+
+.geography-container .geography-map {
+  max-width: 100%; }
+  @media only all and (min-width: 1024px) {
+    .geography-container .geography-map {
+      margin-top: -15px; } }
+  @media only all and (min-width: 0) and (max-width: 1023px) {
+    .geography-container .geography-map {
+      margin-bottom: 15px; } }
+
+@media only all and (min-width: 1366px) {
+  .geography-container .geography-items {
+    display: flex;
+    max-width: 850px;
+    width: 100%;
+    margin: 0 auto; } }
+
+@media only all and (min-width: 0) and (max-width: 1365px) {
+  .geography-container .geography-items {
+    padding-top: 15px; } }
+
+@media only all and (min-width: 1366px) {
+  .geography-container .geography-items {
+    transform: translateY(-38px); } }
+
+.geography-container .geography-item {
+  font-weight: 300;
+  color: #929ba9;
+  line-height: 1.722; }
+  @media only all and (min-width: 1024px) {
+    .geography-container .geography-item {
+      font-size: 18px; } }
+  @media only all and (min-width: 0) and (max-width: 1023px) {
+    .geography-container .geography-item {
+      font-size: 16px; } }
+  .geography-container .geography-item .marker-line span {
+    display: block; }
+    @media only all and (min-width: 1024px) {
+      .geography-container .geography-item .marker-line span {
+        padding-top: 3px; } }
+  .geography-container .geography-item:first-child {
+    max-width: 440px;
+    width: 100%; }
+    @media only all and (min-width: 0) and (max-width: 1023px) {
+      .geography-container .geography-item:first-child {
+        margin-bottom: 30px; } }
+
+.geography-container .geography-heading {
+  flex: 1; }
+
+.payment-block {
+  background: #092f57 url(../img/grid-background.png) no-repeat;
+  color: #fff; }
+  @media only all and (min-width: 1024px) {
+    .payment-block {
+      padding: 85px 0 143px 0; } }
+  @media only all and (min-width: 0) and (max-width: 1023px) {
+    .payment-block {
+      padding: 40px 0 45px 0; } }
+
+@media only all and (min-width: 1024px) {
+  .payment-items {
+    padding-top: 4px;
+    display: flex; } }
+
+.payment-items .payment-item:first-child {
+  color: #fff;
+  line-height: 1.722;
+  font-weight: 300; }
+  @media only all and (min-width: 1024px) {
+    .payment-items .payment-item:first-child {
+      font-size: 18px; } }
+  @media only all and (min-width: 0) and (max-width: 1023px) {
+    .payment-items .payment-item:first-child {
+      font-size: 16px; } }
+  @media only all and (min-width: 1024px) {
+    .payment-items .payment-item:first-child {
+      max-width: 465px;
+      margin-right: 86px; } }
+  @media only all and (min-width: 0) and (max-width: 1023px) {
+    .payment-items .payment-item:first-child {
+      margin-bottom: 25px; } }
+
+.payment-items .payment-phones_list {
+  display: flex;
+  transform: translateY(5px);
+  flex-wrap: wrap; }
+  .payment-items .payment-phones_list .payment-phone {
+    max-width: 330px;
+    width: 100%;
+    margin-bottom: 28px; }
+  .payment-items .payment-phones_list a {
+    width: 50%;
+    letter-spacing: .7px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+    line-height: 0.791;
+    transition: color 200ms ease; }
+    @media only all and (min-width: 1024px) {
+      .payment-items .payment-phones_list a {
+        font-size: 30px; } }
+    @media only all and (min-width: 0) and (max-width: 1023px) {
+      .payment-items .payment-phones_list a {
+        font-size: 23px; } }
+    .payment-items .payment-phones_list a:hover {
+      color: #0090f0; }
+
+@media only all and (min-width: 1024px) {
+  .quality-block {
+    padding: 90px 0 140px 0; } }
+
+@media only all and (min-width: 0) and (max-width: 1023px) {
+  .quality-block {
+    padding: 40px 0 60px 0; } }
+
+.quality-block .quality-items {
+  margin-bottom: 50px; }
+  @media only all and (min-width: 1024px) {
+    .quality-block .quality-items {
+      display: flex; } }
+
+.quality-block .quality-icon_list {
+  display: flex;
+  justify-content: space-between;
+  max-width: 660px;
+  padding-top: 18px;
+  align-items: center; }
+  @media only all and (min-width: 1024px) {
+    .quality-block .quality-icon_list .quality-icon {
+      margin-right: 32px; } }
+  @media only all and (min-width: 0) and (max-width: 1023px) {
+    .quality-block .quality-icon_list .quality-icon {
+      margin-right: 20px; } }
+  .quality-block .quality-icon_list .quality-icon img {
+    max-width: 100%; }
+
+.quality-block .quality-item:last-child {
+  flex: 1; }
+
+.quality-block .quality-item:first-child {
+  font-weight: 300;
+  color: rgba(9, 47, 87, 0.65);
+  line-height: 1.77;
+  box-sizing: border-box; }
+  @media only all and (min-width: 0) and (max-width: 1023px) {
+    .quality-block .quality-item:first-child {
+      font-size: 16px; } }
+  @media only all and (min-width: 1024px) {
+    .quality-block .quality-item:first-child {
+      font-size: 18px;
+      padding-right: 79px;
+      max-width: 551px; } }
+
 .skip-link {
   position: absolute;
   top: -40px;
@@ -2331,8 +2493,13 @@ nav a {
     height: 1px;
     width: 60px;
     display: block;
-    background: #0090f0;
-    margin-bottom: 24px; }
+    background: #0090f0; }
+    @media only all and (min-width: 1024px) {
+      .marker-line:before {
+        margin-bottom: 24px; } }
+    @media only all and (min-width: 0) and (max-width: 1023px) {
+      .marker-line:before {
+        margin-bottom: 18px; } }
 
 .asphalt {
   background: #f7f7f9; }

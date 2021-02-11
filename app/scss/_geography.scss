@@ -1,0 +1,187 @@
+@import "variables";
+@import "mixins";
+
+.geography-block {
+  @include respond($mobile-breakpoint) {
+    padding: 90px 0 75px 0;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    padding: 40px 0 60px 0;
+  }
+  box-sizing: border-box;
+}
+
+.geography-container {
+
+  .geography-map {
+    @include respond($mobile-breakpoint) {
+      margin-top: -15px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      margin-bottom: 15px;
+    }
+    max-width: 100%;
+  }
+
+  .geography-items {
+    @include respond(1366px) {
+      display: flex;
+      max-width: 850px;
+      width: 100%;
+      margin: 0 auto;
+    }
+    @include respond(0, 1366px) {
+      padding-top: 15px;
+    }
+    @include respond(1366px) {
+      transform: translateY(-38px);
+    }
+  }
+
+  .geography-item {
+    font-weight: $regular;
+    @include respond($mobile-breakpoint) {
+      font-size: 18px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      font-size: 16px;
+    }
+    color: $gray-font;
+    line-height: 1.722;
+    .marker-line {
+      span {
+        @include respond($mobile-breakpoint) {
+          padding-top: 3px;
+        }
+        display: block;
+      }
+    }
+    &:first-child {
+      @include respond(0, $mobile-breakpoint) {
+        margin-bottom: 30px;
+      }
+      max-width: 440px;
+      width: 100%;
+    }
+  }
+
+  .geography-heading {
+    flex: 1;
+  }
+}
+
+.payment-block {
+  @include respond($mobile-breakpoint) {
+    padding: 85px 0 143px 0;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    padding: 40px 0 45px 0;
+  }
+  background: $navy url(../img/grid-background.png) no-repeat;
+  color: $white;
+}
+
+.payment-items {
+  @include respond($mobile-breakpoint) {
+    padding-top: 4px;
+    display: flex;
+  }
+  .payment-item:first-child {
+    @include respond($mobile-breakpoint) {
+      font-size: 18px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      font-size: 16px;
+    }
+    color: $white;
+    line-height: 1.722;
+    font-weight: $light;
+    @include respond($mobile-breakpoint) {
+      max-width: 465px;
+      margin-right: 86px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      margin-bottom: 25px;
+    }
+  }
+  .payment-phones_list {
+    display: flex;
+    transform: translateY(5px);
+    flex-wrap: wrap;
+    .payment-phone {
+      max-width: 330px;
+      width: 100%;
+      margin-bottom: 28px;
+    }
+    a {
+      width: 50%;
+      letter-spacing: .7px;
+      text-decoration: none;
+      @include respond($mobile-breakpoint) {
+        font-size: 30px;
+      }
+      @include respond(0, $mobile-breakpoint) {
+        font-size: 23px;
+      }
+      font-weight: $bold;
+      color: $white;
+      line-height: 0.791;
+      @include color-transition;
+      &:hover {
+        color: $blue;
+      }
+    }
+  }
+}
+
+.quality-block {
+  @include respond($mobile-breakpoint) {
+    padding: 90px 0 140px 0;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    padding: 40px 0 60px 0;
+  }
+  .quality-items {
+    @include respond($mobile-breakpoint) {
+      display: flex;
+    }
+    margin-bottom: 50px;
+  }
+  .quality-icon_list {
+    display: flex;
+    justify-content: space-between;
+    max-width: 660px;
+    padding-top: 18px;
+    align-items: center;
+    .quality-icon {
+      @include respond($mobile-breakpoint) {
+        margin-right: 32px;
+      }
+      @include respond(0, $mobile-breakpoint) {
+        margin-right: 20px;
+      }
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+  .quality-item {
+    &:last-child {
+      flex: 1;
+    }
+    &:first-child {
+      font-weight: $light;
+      color: transparentize($navy, .35);
+      line-height: 1.77;
+      box-sizing: border-box;
+      @include respond(0, $mobile-breakpoint) {
+        font-size: 16px;
+      }
+      @include respond($mobile-breakpoint) {
+        font-size: 18px;
+        padding-right: 79px;
+        max-width: 551px;
+      }
+    }
+  }
+}
