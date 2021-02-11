@@ -14,9 +14,12 @@
   background: $blue;
   color: $white;
   height: 60px;
-  padding: 0 31px 0 36px;
+  padding: 0 42px 0 37px;
   display: inline-flex;
   align-items: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
   border-radius: 40px;
   @include link-style;
   font-size: 16px;

@@ -1,0 +1,88 @@
+@import "mixins";
+@import "variables";
+
+form {
+  .text-center {
+    width: 100%;
+  }
+  .form-button_block {
+    padding-top: 9px;
+  }
+  .row {
+    display: flex;
+    @include respond($mobile-breakpoint) {
+      justify-content: space-between;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      flex-direction: column;
+    }
+    &:not(:last-child) {
+      margin-bottom: 38px;
+    }
+  }
+  .column {
+    @include respond(0, $mobile-breakpoint) {
+      &:not(:last-child) {
+        margin-bottom: 38px;
+      }
+    }
+    @include respond($mobile-breakpoint) {
+      flex: 1;
+      max-width: calc(50% - 15px);
+    }
+  }
+}
+
+.input {
+  background: inherit;
+  position: relative;
+  width: 100%;
+  border-bottom: 1px solid $gray-font;
+  &:not(.active) {
+    .label {
+      bottom: 11px;
+    }
+  }
+  &.active {
+    border-bottom: 1px solid $blue;
+    &:after {
+      content: '';
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: $blue;
+      bottom: -2px;
+      display: block;
+      position: absolute;
+    }
+    .label {
+      bottom: 40px;
+      font-size: 13px;
+    }
+  }
+  .label {
+    position: absolute;
+    bottom: 100%;
+    letter-spacing: .3px;
+    left: 0;
+    pointer-events: none;
+    font-size: 18px;
+    color: $gray-font;
+    line-height: 1.2;
+    font-weight: $regular;
+    transition: bottom 200ms ease, font-size 200ms ease;
+  }
+  input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0;
+    height: 45px;
+    border: none;
+    outline: none;
+    background: inherit;
+    font-size: 18px;
+    color: $navy;
+    line-height: 1.2;
+    font-weight: $regular;
+  }
+}

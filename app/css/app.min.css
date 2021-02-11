@@ -1074,9 +1074,12 @@ svg.leaflet-image-layer.leaflet-interactive path {
   background: #0090f0;
   color: #fff;
   height: 60px;
-  padding: 0 31px 0 36px;
+  padding: 0 42px 0 37px;
   display: inline-flex;
   align-items: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
   border-radius: 40px;
   text-decoration: none;
   font-size: 16px;
@@ -1608,49 +1611,49 @@ body.menu-opened .menu .close-button {
   .advantages-block .advantage-title span {
     font-weight: 500; }
 
-.partner-block {
-  background: #092f57;
+.center-block {
+  background: #092f57 url(../img/grid-background.png) no-repeat center/cover;
   text-align: center; }
   @media only all and (min-width: 1024px) {
-    .partner-block {
+    .center-block {
       padding: 83px 0 127px 0; } }
   @media only all and (min-width: 0) and (max-width: 1023px) {
-    .partner-block {
+    .center-block {
       padding: 40px 0 60px 0; } }
-  .partner-block .marker-line:before {
+  .center-block .marker-line:before {
     margin-left: auto;
     margin-right: auto; }
-  .partner-block .partner-title {
+  .center-block .center-title {
     font-weight: 300;
     color: #fff;
     letter-spacing: .4px;
     line-height: 1.333;
     margin-bottom: 26px; }
     @media only all and (min-width: 1024px) {
-      .partner-block .partner-title {
+      .center-block .center-title {
         font-size: 42px; } }
     @media only all and (min-width: 0) and (max-width: 1023px) {
-      .partner-block .partner-title {
+      .center-block .center-title {
         font-size: 34px; } }
-  .partner-block .partner-description {
+  .center-block .center-description {
     font-size: 18px;
     font-weight: 300;
     color: #fff;
     line-height: 1.722;
     margin-bottom: 33px; }
-  .partner-block .partner-email_link {
+  .center-block .center-email_link {
     color: #fff;
     font-weight: bold;
     text-decoration: none;
     letter-spacing: 1px;
     transition: color 200ms ease; }
     @media only all and (min-width: 1024px) {
-      .partner-block .partner-email_link {
+      .center-block .center-email_link {
         font-size: 40px; } }
     @media only all and (min-width: 0) and (max-width: 1023px) {
-      .partner-block .partner-email_link {
+      .center-block .center-email_link {
         font-size: 26px; } }
-    .partner-block .partner-email_link:hover {
+    .center-block .center-email_link:hover {
       color: #0090f0; }
 
 @media only all and (min-width: 1024px) {
@@ -2118,6 +2121,263 @@ body.menu-opened .menu .close-button {
       padding-right: 79px;
       max-width: 551px; } }
 
+.numbers-block {
+  counter-reset: step; }
+  @media only all and (min-width: 1024px) {
+    .numbers-block {
+      padding: 95px 0 65px 0; } }
+  @media only all and (min-width: 0) and (max-width: 1023px) {
+    .numbers-block {
+      padding: 40px 0 0 0; } }
+  .numbers-block .numbers-grid {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 42px; }
+    .numbers-block .numbers-grid_cell {
+      counter-increment: step;
+      max-width: 412px;
+      width: 100%; }
+      @media only all and (min-width: 1024px) {
+        .numbers-block .numbers-grid_cell {
+          margin-bottom: 84px; } }
+      @media only all and (min-width: 0) and (max-width: 1023px) {
+        .numbers-block .numbers-grid_cell {
+          margin-bottom: 40px; } }
+      .numbers-block .numbers-grid_cell .marker-line {
+        color: #092f57;
+        line-height: 1.722;
+        font-weight: 300;
+        max-width: 300px; }
+        @media only all and (min-width: 1024px) {
+          .numbers-block .numbers-grid_cell .marker-line {
+            font-size: 18px; } }
+        @media only all and (min-width: 0) and (max-width: 1023px) {
+          .numbers-block .numbers-grid_cell .marker-line {
+            font-size: 16px; } }
+      .numbers-block .numbers-grid_cell:before {
+        content: "0" counter(step);
+        font-size: 72px;
+        color: #092f57;
+        line-height: 0.737;
+        font-weight: 500;
+        display: block;
+        margin-bottom: 26px;
+        transform: translateX(-3px); }
+  .numbers-block .heading-numbers {
+    font-weight: 300;
+    margin-bottom: 24px;
+    line-height: 1.333; }
+    @media only all and (min-width: 1024px) {
+      .numbers-block .heading-numbers {
+        font-size: 42px; } }
+    @media only all and (min-width: 0) and (max-width: 1023px) {
+      .numbers-block .heading-numbers {
+        font-size: 36px; } }
+
+.technical-block {
+  background: url(../img/honeycomb-background.png) no-repeat center/cover; }
+  @media only all and (min-width: 1024px) {
+    .technical-block {
+      padding: 100px 0 155px 0; } }
+  @media only all and (min-width: 0) and (max-width: 1023px) {
+    .technical-block {
+      padding: 40px 0 60px 0; } }
+  .technical-block .technical-text {
+    padding-top: 20px;
+    max-width: 700px;
+    color: #092f57;
+    line-height: 1.722;
+    font-weight: 300; }
+    @media only all and (min-width: 1024px) {
+      .technical-block .technical-text {
+        font-size: 18px; } }
+    @media only all and (min-width: 0) and (max-width: 1023px) {
+      .technical-block .technical-text {
+        font-size: 16px; } }
+    .technical-block .technical-text b,
+    .technical-block .technical-text strong {
+      font-weight: 500; }
+
+.service-block {
+  background: #092f57 url(../img/grid-background.png) no-repeat center/cover;
+  text-align: center; }
+  @media only all and (min-width: 1024px) {
+    .service-block {
+      padding: 112px 0 120px 0; } }
+  @media only all and (min-width: 0) and (max-width: 1023px) {
+    .service-block {
+      padding: 40px 0 45px 0; } }
+  .service-block .marker-line:before {
+    margin-left: auto;
+    margin-right: auto; }
+  .service-block .service-title {
+    font-weight: 300;
+    color: #fff;
+    letter-spacing: .4px;
+    line-height: 1.333;
+    margin-bottom: 42px; }
+    @media only all and (min-width: 1024px) {
+      .service-block .service-title {
+        font-size: 42px; } }
+    @media only all and (min-width: 0) and (max-width: 1023px) {
+      .service-block .service-title {
+        font-size: 34px; } }
+  .service-block .service-description {
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.74;
+    max-width: 906px;
+    margin: 0 auto 33px; }
+    @media only all and (min-width: 1024px) {
+      .service-block .service-description {
+        font-size: 18px; } }
+    @media only all and (min-width: 0) and (max-width: 1023px) {
+      .service-block .service-description {
+        font-size: 16px; } }
+  .service-block .service-email_link {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: color 200ms ease; }
+    @media only all and (min-width: 1024px) {
+      .service-block .service-email_link {
+        font-size: 40px; } }
+    @media only all and (min-width: 0) and (max-width: 1023px) {
+      .service-block .service-email_link {
+        font-size: 26px; } }
+    .service-block .service-email_link:hover {
+      color: #0090f0; }
+
+@media only all and (min-width: 1024px) {
+  .contact-block {
+    padding: 100px 0 141px 0; } }
+
+@media only all and (min-width: 0) and (max-width: 1023px) {
+  .contact-block {
+    padding: 40px 0 50px 0; } }
+
+.contact-block form {
+  max-width: 558px;
+  width: 100%;
+  margin: 0 auto; }
+
+.contact-block .heading-contact {
+  font-weight: 300;
+  color: #092f57;
+  letter-spacing: .4px;
+  line-height: 1.333;
+  margin-bottom: 24px; }
+  @media only all and (min-width: 1024px) {
+    .contact-block .heading-contact {
+      font-size: 42px; } }
+  @media only all and (min-width: 0) and (max-width: 1023px) {
+    .contact-block .heading-contact {
+      font-size: 34px; } }
+
+form .text-center {
+  width: 100%; }
+
+form .form-button_block {
+  padding-top: 9px; }
+
+form .row {
+  display: flex; }
+  @media only all and (min-width: 1024px) {
+    form .row {
+      justify-content: space-between; } }
+  @media only all and (min-width: 0) and (max-width: 1023px) {
+    form .row {
+      flex-direction: column; } }
+  form .row:not(:last-child) {
+    margin-bottom: 38px; }
+
+@media only all and (min-width: 0) and (max-width: 1023px) {
+  form .column:not(:last-child) {
+    margin-bottom: 38px; } }
+
+@media only all and (min-width: 1024px) {
+  form .column {
+    flex: 1;
+    max-width: calc(50% - 15px); } }
+
+.input {
+  background: inherit;
+  position: relative;
+  width: 100%;
+  border-bottom: 1px solid #929ba9; }
+  .input:not(.active) .label {
+    bottom: 11px; }
+  .input.active {
+    border-bottom: 1px solid #0090f0; }
+    .input.active:after {
+      content: '';
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: #0090f0;
+      bottom: -2px;
+      display: block;
+      position: absolute; }
+    .input.active .label {
+      bottom: 40px;
+      font-size: 13px; }
+  .input .label {
+    position: absolute;
+    bottom: 100%;
+    letter-spacing: .3px;
+    left: 0;
+    pointer-events: none;
+    font-size: 18px;
+    color: #929ba9;
+    line-height: 1.2;
+    font-weight: 300;
+    transition: bottom 200ms ease, font-size 200ms ease; }
+  .input input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0;
+    height: 45px;
+    border: none;
+    outline: none;
+    background: inherit;
+    font-size: 18px;
+    color: #092f57;
+    line-height: 1.2;
+    font-weight: 300; }
+
+.checkbox {
+  font-weight: 300;
+  cursor: pointer;
+  padding-left: 38px;
+  position: relative;
+  padding-top: 2px;
+  letter-spacing: .2px;
+  line-height: 1.875; }
+  .checkbox input {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+    left: 5px;
+    top: 4px;
+    width: 25px;
+    height: 25px; }
+  .checkbox input:checked + span {
+    background: #0090f0 url(../img/sprite.svg#checkbox) no-repeat center/15px; }
+  .checkbox span {
+    width: 25px;
+    height: 25px;
+    border: 2px solid #0090f0;
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 4px; }
+  .checkbox a {
+    color: #0090f0;
+    text-decoration: none;
+    border-bottom: 1px solid; }
+
 .skip-link {
   position: absolute;
   top: -40px;
@@ -2479,6 +2739,9 @@ nav a {
   nav a:hover, nav a.active {
     color: #0090f0; }
 
+.text-center {
+  text-align: center; }
+
 .app-panel {
   display: flex;
   align-items: center;
@@ -2487,7 +2750,7 @@ nav a {
 .marker-line {
   position: relative;
   margin-top: 16px;
-  display: inline-block; }
+  display: block; }
   .marker-line:before {
     content: '';
     height: 1px;

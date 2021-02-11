@@ -11,6 +11,17 @@ jQuery(function ($) {
         $('body').addClass('search-opened').removeClass('menu-opened');
     });
 
+    $('[type="tel"]').mask('+7 (000) 000-00-00');
+
+    $('.input')
+        .on('focus', 'input', function() {
+            $(this).parent().addClass('active');
+        })
+        .on('blur', 'input', function() {
+            if ($.trim($(this).val()) == '')
+                $(this).parent().removeClass('active');
+        });
+
     if ($('#map').length > 0) {
         setTimeout(function () {
             let script = document.createElement("script");

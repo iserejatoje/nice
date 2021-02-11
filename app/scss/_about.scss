@@ -302,8 +302,8 @@
   }
 }
 
-.partner-block {
-  background: $navy;
+.center-block {
+  background: $navy url(../img/grid-background.png) no-repeat center / cover;
   @include respond($mobile-breakpoint) {
     padding: 83px 0 127px 0;
   }
@@ -317,7 +317,7 @@
       margin-right: auto;
     }
   }
-  .partner-title {
+  .center-title {
     @include respond($mobile-breakpoint) {
       font-size: 42px;
     }
@@ -330,14 +330,14 @@
     line-height: 1.333;
     margin-bottom: 26px;
   }
-  .partner-description {
+  .center-description {
     font-size: 18px;
     font-weight: $light;
     color: $white;
     line-height: 1.722;
     margin-bottom: 33px;
   }
-  .partner-email_link {
+  .center-email_link {
     @include respond($mobile-breakpoint) {
       font-size: 40px;
     }

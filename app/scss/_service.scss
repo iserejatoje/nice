@@ -1,0 +1,181 @@
+@import "mixins";
+@import "variables";
+
+.numbers-block {
+  @include respond($mobile-breakpoint) {
+    padding: 95px 0 65px 0;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    padding: 40px 0 0 0;
+  }
+  counter-reset: step;
+
+  .numbers-grid {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 42px;
+    &_cell {
+      counter-increment: step;
+      max-width: 412px;
+      width: 100%;
+      @include respond($mobile-breakpoint) {
+        margin-bottom: 84px;
+      }
+      @include respond(0, $mobile-breakpoint) {
+        margin-bottom: 40px;
+      }
+
+      .marker-line {
+        color: $navy;
+        line-height: 1.722;
+        font-weight: $light;
+        @include respond($mobile-breakpoint) {
+          font-size: 18px;
+        }
+        @include respond(0, $mobile-breakpoint) {
+          font-size: 16px;
+        }
+        max-width: 300px;
+      }
+      &:before {
+        content: "0" counter(step);
+        font-size: 72px;
+        color: $navy;
+        line-height: 0.737;
+        font-weight: $medium;
+        display: block;
+        margin-bottom: 26px;
+        transform: translateX(-3px);
+      }
+    }
+  }
+
+  .heading-numbers {
+    @include respond($mobile-breakpoint) {
+      font-size: 42px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      font-size: 36px;
+    }
+    font-weight: $regular;
+    margin-bottom: 24px;
+    line-height: 1.333;
+  }
+
+}
+
+.technical-block {
+  @include respond($mobile-breakpoint) {
+    padding: 100px 0 155px 0;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    padding: 40px 0 60px 0;
+  }
+  background: url(../img/honeycomb-background.png) no-repeat center / cover;
+
+  .technical-text {
+    @include respond($mobile-breakpoint) {
+      font-size: 18px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      font-size: 16px;
+    }
+    padding-top: 20px;
+    max-width: 700px;
+    color: $navy;
+    line-height: 1.722;
+    font-weight: $light;
+    b,
+    strong {
+      font-weight: $medium;
+    }
+  }
+}
+
+.service-block {
+  background: $navy url(../img/grid-background.png) no-repeat center / cover;
+  @include respond($mobile-breakpoint) {
+    padding: 112px 0 120px 0;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    padding: 40px 0 45px 0;
+  }
+  text-align: center;
+  .marker-line {
+    &:before {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  .service-title {
+    @include respond($mobile-breakpoint) {
+      font-size: 42px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      font-size: 34px;
+    }
+    font-weight: $regular;
+    color: $white;
+    letter-spacing: .4px;
+    line-height: 1.333;
+    margin-bottom: 42px;
+  }
+  .service-description {
+    @include respond($mobile-breakpoint) {
+      font-size: 18px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      font-size: 16px;
+    }
+    font-weight: $light;
+    color: $white;
+    line-height: 1.74;
+    max-width: 906px;
+    margin: 0 auto 33px;
+  }
+  .service-email_link {
+    @include respond($mobile-breakpoint) {
+      font-size: 40px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      font-size: 26px;
+    }
+    color: $white;
+    font-weight: $bold;
+    @include link-style;
+    letter-spacing: 1px;
+    @include color-transition;
+    &:hover {
+      color: $blue;
+    }
+  }
+}
+
+.contact-block {
+  @include respond($mobile-breakpoint) {
+    padding: 100px 0 141px 0;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    padding: 40px 0 50px 0;
+  }
+
+  form {
+    max-width: 558px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .heading-contact {
+    @include respond($mobile-breakpoint) {
+      font-size: 42px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      font-size: 34px;
+    }
+    font-weight: $regular;
+    color: $navy;
+    letter-spacing: .4px;
+    line-height: 1.333;
+    margin-bottom: 24px;
+  }
+}
