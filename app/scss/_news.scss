@@ -1,0 +1,11 @@
+@import "variables";
+@import "mixins";
+
+.news-block {
+  @include respond($mobile-breakpoint) {
+    padding: 90px 0 160px 0;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    padding: 40px 0 50px 0;
+  }
+}

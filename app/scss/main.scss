@@ -11,6 +11,7 @@
 @import "catalog";
 @import "geography";
 @import "service";
+@import "news";
 @import "form";
 
 .checkbox {
@@ -676,6 +677,92 @@ nav {
       display: block;
       max-width: 100%;
       fill: $blue;
+    }
+  }
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  @include respond(760px, 940px) {
+    justify-content: space-between;
+  }
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 60px;
+  svg {
+    display: block;
+    fill: transparentize($navy, .5);
+    transition: fill 200ms ease;
+  }
+  .prev {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+  .prev {
+    margin-right: 18px;
+  }
+  .next {
+    margin-left: 18px;
+  }
+  a {
+    &.active {
+      font-size: 21px;
+      color: $blue;
+    }
+    &:not(.prev):not(.next) {
+      margin: 0 15px;
+    }
+    color: $navy;
+    font-size: 18px;
+    font-weight: $regular;
+    display: inline-block;
+    text-decoration: none;
+    @include color-transition;
+    &:hover {
+      color: $blue;
+      svg {
+        fill: $navy;
+      }
+    }
+  }
+}
+
+.blue-btn_tab {
+  box-sizing: border-box;
+  margin-bottom: 25px;
+  background: inherit;
+  color: transparentize($navy, .5);
+  @include link-style;
+  height: 50px;
+  border: 1px solid $tab-border;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  letter-spacing: 1px;
+  border-radius: 30px;
+  transition: background-color 200ms ease, border 200ms ease, color 200ms ease;
+  &:hover,
+  &.active {
+    background: $blue;
+    border-color: $blue;
+    color: $white;
+  }
+  @include respond(760px, 940px) {
+    width: calc(50% - 10px);
+  }
+  @include respond(0, 760px) {
+    width: 100%;
+  }
+  &:not(:last-child) {
+    @include respond(940px) {
+      margin-right: 20px;
     }
   }
 }

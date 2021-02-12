@@ -1,6 +1,7 @@
 # NISE
 _Медицинское оборудование экспертного уровня_
 
+- [Блог](https://iserejatoje.github.io/nice/news.html)
 - [Сервис](https://iserejatoje.github.io/nice/service.html)
 - [Покупателю](https://iserejatoje.github.io/nice/customers.html)
 - [Каталог_1](https://iserejatoje.github.io/nice/catalog_1.html)

@@ -72,48 +72,6 @@
   }
 }
 
-.tabs {
-  display: flex;
-  flex-wrap: wrap;
-  @include respond(760px, 940px) {
-    justify-content: space-between;
-  }
-}
-
-.blue-btn_tab {
-  box-sizing: border-box;
-  margin-bottom: 25px;
-  background: $white;
-  color: transparentize($navy, .5);
-  @include link-style;
-  height: 50px;
-  border: 1px solid $tab-border;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 24px;
-  letter-spacing: 1px;
-  border-radius: 30px;
-  transition: background-color 200ms ease, border 200ms ease, color 200ms ease;
-  &:hover,
-  &.active {
-    background: $blue;
-    border-color: $blue;
-    color: $white;
-  }
-  @include respond(760px, 940px) {
-    width: calc(50% - 10px);
-  }
-  @include respond(0, 760px) {
-    width: 100%;
-  }
-  &:not(:last-child) {
-    @include respond(940px) {
-      margin-right: 20px;
-    }
-  }
-}
-
 .favorite-toggle_heart {
   fill: $heart-gray;
   transition: fill 200ms ease;
@@ -123,20 +81,39 @@
   }
 }
 
-.products-wrapper {
-  .product-card {
-    display: flex;
-    flex-direction: column;
-    transition: box-shadow 200ms ease;
-    &:hover {
-      box-shadow: 0 30px 54px 6px rgba(9, 47, 87, 0.11);
-    }
-    .product-image {
-      text-align: center;
+.card-grid {
+  display: grid;
+  grid-gap: 30px;
+  @include respond(1110px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include respond(760px, 1110px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include respond(0, 760px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  padding-top: 23px;
+  .card {
+    background: $white;
+    min-height: 620px;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 200ms ease;
+  &:hover {
+    box-shadow: 0 30px 54px 6px rgba(9, 47, 87, 0.11);
+  }
+  .card-image {
+    &:not(.auto-height) {
       height: 270px;
       display: flex;
       align-items: center;
       justify-content: center;
+      text-align: center;
       img {
         display: block;
         width: 100%;
@@ -144,49 +121,63 @@
         object-fit: contain;
       }
     }
-    .product-links {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: 21px;
+    img {
       width: 100%;
     }
-    .product-excerpt {
-      font-size: 16px;
+  }
+  .card-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 21px;
+    width: 100%;
+  }
+  .card-excerpt {
+    font-size: 16px;
+    color: $gray-font;
+    font-weight: $regular;
+    line-height: 1.813;
+    padding-top: 13px;
+    flex: 1;
+  }
+  .card-name {
+    font-size: 21px;
+    color: $navy;
+    line-height: 1.619;
+    text-decoration: none;
+    display: inline-block;
+    @include color-transition;
+    font-weight: $regular;
+    &:hover {
+      color: $blue;
+    }
+  }
+  .card-date {
+    font-size: 15px;
+    font-weight: $regular;
+    margin-bottom: 5px;
+    line-height: 2.067;
+    .date {
       color: $gray-font;
-      font-weight: $regular;
-      line-height: 1.813;
-      padding-top: 13px;
-      flex: 1;
+      letter-spacing: .2px;
     }
-    .product-name {
-      font-size: 21px;
-      color: $navy;
-      line-height: 1.619;
-      text-decoration: none;
-      display: inline-block;
-      @include color-transition;
-      &:hover {
-        color: $blue;
-      }
-    }
-    .product-content {
-      padding: 27px 40px 45px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    .product-brand {
-      font-size: 15px;
-      color: $gray-font;
-      font-weight: $regular;
-      line-height: 2.067;
-      @include link-style;
-      @include color-transition;
-      &:hover {
-        color: $blue;
-      }
+  }
+  .card-content {
+    padding: 20px 38px 49px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .card-brand {
+    font-size: 15px;
+    color: $gray-font;
+    font-weight: $regular;
+    line-height: 2.067;
+    @include link-style;
+    @include color-transition;
+    &:hover {
+      color: $blue;
     }
   }
 }
