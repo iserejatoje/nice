@@ -13,7 +13,6 @@
     <link rel="preload" href="app/fonts/Stem-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="app/fonts/OpenSans-Bold.woff" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="app/fonts/Stem-SemiLight.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-
     <link rel="stylesheet" href="app/css/app.min.css">
 </head>
 <body>
@@ -383,6 +382,72 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
+<div class="commercial-offer_overlay">
+    <div class="commercial-offer_popup">
+        <button class="close-button">
+            <svg width="20" height="20"><use xlink:href="app/img/sprite.svg#close"></use></svg>
+        </button>
+        <div class="title">Запросить<br/>коммерческое предложение</div>
+
+        <form action="" method="post" enctype="application/x-www-form-urlencoded" autocomplete="off">
+            <div class="row">
+                <div class="input">
+                    <input required type="text" name="firstname">
+                    <span class="label">Ваше имя</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <div class="input">
+                        <input required type="email" name="email">
+                        <span class="label">E-mail</span>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="input">
+                        <input required type="tel" minlength="18" name="phone">
+                        <span class="label">Номер телефона</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input">
+                    <input required type="text" name="organization">
+                    <span class="label">Название организации</span>
+                </div>
+            </div>
+            <div class="row">
+                <select required name="profile" id="profile">
+                    <option value="">Профиль организации</option>
+                    <option value="Государственные ЛПУ">Государственные ЛПУ</option>
+                    <option value="Частная медицинская организация">Частная медицинская организация</option>
+                    <option value="Коммерческая организация">Коммерческая организация</option>
+                    <option value="Благотворительная организация">Благотворительная организация</option>
+                    <option value="Другое">Другое</option>
+                </select>
+            </div>
+            <div class="row">
+                <div class="input">
+                    <input required type="text" name="message">
+                    <span class="label">Ваше комментарий</span>
+                </div>
+            </div>
+            <div class="row">
+                <label class="checkbox">
+                    <input required type="checkbox" checked class="checkbox-input">
+                    <span></span>
+                    Даю согласие на обработку своих <a href="#">персональных данных</a>
+                </label>
+            </div>
+            <div class="row form-button_block">
+                <div class="text-left">
+                    <button type="submit" class="blue-btn">Запросить КП <svg width="14" height="20"><use xlink:href="app/img/sprite.svg#arrow"></use></svg></button>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
 

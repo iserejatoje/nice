@@ -2,7 +2,8 @@
 @import "variables";
 
 form {
-  .text-center {
+  .text-center,
+  .text-left {
     width: 100%;
   }
   .form-button_block {
@@ -66,7 +67,12 @@ form {
     letter-spacing: .3px;
     left: 0;
     pointer-events: none;
-    font-size: 18px;
+    @include respond($mobile-breakpoint) {
+      font-size: 18px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      font-size: 16px;
+    }
     color: $gray-font;
     line-height: 1.2;
     font-weight: $regular;

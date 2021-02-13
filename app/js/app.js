@@ -1,24 +1,37 @@
 jQuery(function ($) {
+
+    let
+        overlayClasses = 'menu-opened search-opened commercial-form-opened',
+        phoneMask = '+7 (000) 000-00-00';
+
+    $('select').selectric({responsive: true});
+
+    $(document).keyup(function(e) {
+        if (e.key === "Escape") {
+            $('body').removeClass(overlayClasses);
+        }
+    });
+
     $('.burger').click(function() {
         $('body').addClass('menu-opened');
     });
 
     $('.close-button').click(function() {
-        $('body').removeClass('menu-opened search-opened');
+        $('body').removeClass(overlayClasses);
     });
 
     $('.search-link').click(function() {
         $('body').addClass('search-opened').removeClass('menu-opened');
     });
 
-    $('[type="tel"]').mask('+7 (000) 000-00-00');
+    $('[type="tel"]').mask(phoneMask);
 
     $('.input')
         .on('focus', 'input', function() {
             $(this).parent().addClass('active');
         })
         .on('blur', 'input', function() {
-            if ($.trim($(this).val()) == '')
+            if ($.trim($(this).val()) === '')
                 $(this).parent().removeClass('active');
         });
 

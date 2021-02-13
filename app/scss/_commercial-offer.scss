@@ -1,3 +1,70 @@
-.commercial-offer_overlay {
+@import "variables";
+@import "mixins";
 
+body.commercial-form-opened {
+  overflow: hidden;
+  .commercial-offer_overlay {
+    display: flex;
+  }
+}
+
+.commercial-offer_overlay {
+  background: $commercial-overlay;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  overflow: auto;
+  padding: 20px;
+
+  form {
+    margin-top: 24px;
+  }
+}
+
+.commercial-offer_popup {
+  background: $white;
+  max-width: 705px;
+  width: 100%;
+  position: relative;
+  margin: auto;
+  @include respond($mobile-breakpoint) {
+    padding: 43px 75px;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    padding: 30px 25px;
+  }
+  box-sizing: border-box;
+  .title {
+    @include respond($mobile-breakpoint) {
+      font-size: 40px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      font-size: 30px;
+    }
+    color: $navy;
+    line-height: 1.4;
+    font-weight: $regular;
+  }
+  .close-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: $asphalt;
+    cursor: pointer;
+    width: 75px;
+    height: 75px;
+    display: flex;
+    border: none;
+    outline: none;
+    align-items: center;
+    justify-content: center;
+    svg {
+      fill: $gray-font;
+    }
+  }
 }

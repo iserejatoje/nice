@@ -8,6 +8,7 @@ let paths = {
     scripts: {
         src: [
             'node_modules/jquery/dist/jquery.min.js',
+            baseDir + '/js/selectric.min.js',
             baseDir + '/js/inputmask.min.js',
             baseDir + '/js/app.js'
         ],
@@ -28,11 +29,11 @@ let paths = {
 
 const {src, dest, parallel, series, watch} = require('gulp');
 const sass = require('gulp-sass');
-const cleancss = require('gulp-clean-css');
+// const cleancss = require('gulp-clean-css');
 const concat = require('gulp-concat');
 const browserSync = require('browser-sync').create();
-const uglify = require('gulp-uglify-es').default;
-const autoprefixer = require('gulp-autoprefixer');
+// const uglify = require('gulp-uglify-es').default;
+// const autoprefixer = require('gulp-autoprefixer');
 const newer = require('gulp-newer');
 const svgSprite = require('gulp-svg-sprite');
 
