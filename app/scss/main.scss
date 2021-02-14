@@ -567,7 +567,7 @@ nav {
       padding: 48px 0 72px 0;
     }
     @include respond(0, $mobile-breakpoint) {
-      padding: 42px 0 50px 0;
+      padding: 42px 0 33px 0;
     }
   }
   &_mini {
@@ -581,8 +581,8 @@ nav {
       margin-top: 56px;
     }
     @include respond(0, $mobile-breakpoint) {
-      font-size: 44px;
-      margin-top: 40px;
+      font-size: 36px;
+      margin-top: 30px;
     }
     font-weight: $regular;
     line-height: 1.233;

@@ -3636,7 +3636,7 @@ nav a {
       padding: 48px 0 72px 0; } }
   @media only all and (min-width: 0) and (max-width: 1023px) {
     .page-panel:not(.page-panel_mini) {
-      padding: 42px 0 50px 0; } }
+      padding: 42px 0 33px 0; } }
   .page-panel_mini {
     padding: 38px 0; }
   .page-panel .page-title {
@@ -3650,8 +3650,8 @@ nav a {
         margin-top: 56px; } }
     @media only all and (min-width: 0) and (max-width: 1023px) {
       .page-panel .page-title {
-        font-size: 44px;
-        margin-top: 40px; } }
+        font-size: 36px;
+        margin-top: 30px; } }
   .page-panel .page-description {
     font-weight: 300;
     line-height: 1.667; }
