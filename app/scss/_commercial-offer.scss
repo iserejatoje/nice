@@ -20,6 +20,7 @@ body.commercial-form-opened {
   display: none;
   overflow: auto;
   padding: 20px;
+  z-index: 100;
 
   form {
     margin-top: 24px;

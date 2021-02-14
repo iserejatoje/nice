@@ -578,6 +578,15 @@ nav {
   }
 }
 
+.brand-products_block {
+  @include respond($mobile-breakpoint) {
+    padding: 80px 0 162px 0;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    padding: 40px 0 50px 0;
+  }
+}
+
 .detail-link {
   color: $navy;
   @include link-style;

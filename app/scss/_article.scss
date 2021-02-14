@@ -1,76 +1,74 @@
 @import "mixins";
 @import "variables";
 
-.article-block {
-  .article-header_image {
-    position: relative;
-    img {
-      display: block;
-      max-width: 100%;
-    }
-    &:after {
+.article-header_image {
+  position: relative;
+  img {
+    display: block;
+    max-width: 100%;
+  }
+  &:after {
+    content: '';
+    display: block;
+    opacity: 0.6;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-image: linear-gradient( 0deg, rgb(6,30,56) 0%, rgba(6,30,56,0) 100%);
+  }
+}
+.article-date {
+  @include respond($mobile-breakpoint) {
+    font-size: 18px;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    font-size: 16px;
+  }
+  font-weight: $regular;
+  line-height: 1.722;
+  .date {
+    color: $gray-font;
+  }
+}
+.page-text_title {
+  position: relative;
+  letter-spacing: .5px;
+  @include respond($mobile-breakpoint) {
+    font-size: 48px;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    font-size: 34px;
+  }
+  font-weight: $regular;
+  line-height: 1.167;
+  margin: 14px 0 25px;
+  @include respond(1568px) {
+    &:before {
       content: '';
+      width: 80px;
+      height: 1px;
+      background: transparentize($navy, .7);
       display: block;
-      opacity: 0.6;
       position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      background-image: linear-gradient( 0deg, rgb(6,30,56) 0%, rgba(6,30,56,0) 100%);
+      right: calc(100% + 28px);
+      top: 26px;
     }
   }
-  .article-date {
+}
+.page-text_content {
+  padding: 51px 0;
+  h2 {
+    color: $navy;
     @include respond($mobile-breakpoint) {
+      font-size: 21px;
+    }
+    @include respond(0, $mobile-breakpoint) {
       font-size: 18px;
     }
-    @include respond(0, $mobile-breakpoint) {
-      font-size: 16px;
-    }
     font-weight: $regular;
-    line-height: 1.722;
-    .date {
-      color: $gray-font;
-    }
-  }
-  .article-title {
-    position: relative;
-    letter-spacing: .5px;
-    @include respond($mobile-breakpoint) {
-      font-size: 48px;
-    }
-    @include respond(0, $mobile-breakpoint) {
-      font-size: 34px;
-    }
-    font-weight: $regular;
-    line-height: 1.167;
-    margin: 14px 0 25px;
-    @include respond(1568px) {
-      &:before {
-        content: '';
-        width: 80px;
-        height: 1px;
-        background: transparentize($navy, .7);
-        display: block;
-        position: absolute;
-        right: calc(100% + 28px);
-        top: 26px;
-      }
-    }
-  }
-  .article-content {
-    padding: 51px 0;
-    h2 {
-      color: $navy;
-      @include respond($mobile-breakpoint) {
-        font-size: 21px;
-      }
-      @include respond(0, $mobile-breakpoint) {
-        font-size: 18px;
-      }
-      font-weight: $regular;
-      line-height: 1.619;
-    }
+    line-height: 1.619;
   }
 }
 
