@@ -7,6 +7,7 @@ _Медицинское оборудование экспертного уров
 - [Сервис](https://iserejatoje.github.io/nice/service.html)
 - [Покупателю](https://iserejatoje.github.io/nice/customers.html)
 - [Каталог_1](https://iserejatoje.github.io/nice/catalog_1.html)
+- [Каталог_2](https://iserejatoje.github.io/nice/catalog_2.html)
 - [Документы](https://iserejatoje.github.io/nice/documents.html)
 - [О компании](https://iserejatoje.github.io/nice/about.html)
 - [Контакты](https://iserejatoje.github.io/nice/contacts.html)

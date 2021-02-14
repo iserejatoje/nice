@@ -8,12 +8,25 @@
   @include respond(0, $mobile-breakpoint) {
     padding: 40px 0 60px 0;
   }
-  .manufacturer-heading {
-    margin-bottom: 23px
+  .catalog-grid {
+    margin-top: 36px;
+  }
+}
+
+.category-block {
+  @include respond($mobile-breakpoint) {
+    padding: 62px 0 35px 0;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    padding: 40px 0 33px 0;
   }
   .catalog-grid {
     margin-top: 36px;
   }
+}
+
+.tabs-heading {
+  margin-bottom: 23px
 }
 
 .catalog-grid {
@@ -23,53 +36,55 @@
   @include respond(900px) {
     grid-template-columns: 1fr 1fr;
   }
-  .catalog-cell_image {
-    height: 355px;
-    overflow: hidden;
-    text-align: center;
-    background: $catalog-cell;
-    display: block;
-    padding: 15px;
-    box-sizing: border-box;
-    img {
-      transform: translateY(40px);
-      display: inline-block;
-      max-width: 100%;
-    }
-  }
-  .catalog-cell_categories {
-    font-weight: $light;
-    margin-bottom: 33px;
-    color: $gray-font;
-    line-height: 1.813;
-    a {
-      @include link-style;
-      letter-spacing: .1px;
-      transition: color 200ms ease, border 200ms ease;
-      padding-bottom: 3px;
-      color: $gray-font;
-      border-bottom: 1px solid $white;
-      &:hover {
-        color: $navy;
-        border-bottom: 1px solid;
-      }
-    }
-  }
-  .catalog-cell_title {
-    font-size: 27px;
-    text-transform: uppercase;
-    line-height: 1.556;
-    font-weight: $medium;
-    color: $navy;
-    @include link-style;
-    @include color-transition;
-    &:hover {
-      color: $blue;
-    }
-    margin: 23px 0 15px 0;
+
+}
+
+.catalog-cell_image {
+  height: 355px;
+  overflow: hidden;
+  text-align: center;
+  background: $catalog-cell;
+  display: block;
+  padding: 15px;
+  box-sizing: border-box;
+  img {
+    transform: translateY(40px);
     display: inline-block;
-    letter-spacing: .7px;
+    max-width: 100%;
   }
+}
+.catalog-cell_categories {
+  font-weight: $light;
+  margin-bottom: 33px;
+  color: $gray-font;
+  line-height: 1.813;
+  a {
+    @include link-style;
+    letter-spacing: .1px;
+    transition: color 200ms ease, border 200ms ease;
+    padding-bottom: 3px;
+    color: $gray-font;
+    border-bottom: 1px solid $white;
+    &:hover {
+      color: $navy;
+      border-bottom: 1px solid;
+    }
+  }
+}
+.catalog-cell_title {
+  font-size: 27px;
+  text-transform: uppercase;
+  line-height: 1.556;
+  font-weight: $medium;
+  color: $navy;
+  @include link-style;
+  @include color-transition;
+  &:hover {
+    color: $blue;
+  }
+  margin: 23px 0 8px 0;
+  display: inline-block;
+  letter-spacing: .7px;
 }
 
 .favorite-toggle_heart {
@@ -96,7 +111,7 @@
   padding-top: 23px;
   .card {
     background: $white;
-    min-height: 620px;
+    //min-height: 620px;
   }
 }
 

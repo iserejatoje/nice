@@ -546,9 +546,34 @@ nav {
   flex: 1;
 }
 
+.equipment-slider_block {
+  @include respond($mobile-breakpoint) {
+    padding: 100px 0 150px 0;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    padding: 40px 0;
+  }
+
+  .equipment-slider {
+    margin-top: 48px;
+  }
+}
+
 .page-panel {
   background: $navy url(../img/grid-background.png) no-repeat center / cover;
-  padding: 38px 0;
+
+  &:not(&_mini) {
+    @include respond($mobile-breakpoint) {
+      padding: 48px 0 72px 0;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      padding: 42px 0 50px 0;
+    }
+  }
+  &_mini {
+    padding: 38px 0;
+  }
+
   color: $white;
   .page-title {
     @include respond($mobile-breakpoint) {
@@ -651,7 +676,7 @@ nav {
   }
   .breadcrumbs-separator {
     @include respond($mobile-breakpoint) {
-      margin: 0 18px;
+      margin: 0 14px;
     }
     @include respond(0, $mobile-breakpoint) {
       margin: 0 8px;

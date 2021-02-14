@@ -2617,11 +2617,22 @@ body.menu-opened .menu .close-button {
   .catalog-block {
     padding: 40px 0 60px 0; } }
 
-.catalog-block .manufacturer-heading {
-  margin-bottom: 23px; }
-
 .catalog-block .catalog-grid {
   margin-top: 36px; }
+
+@media only all and (min-width: 1024px) {
+  .category-block {
+    padding: 62px 0 35px 0; } }
+
+@media only all and (min-width: 0) and (max-width: 1023px) {
+  .category-block {
+    padding: 40px 0 33px 0; } }
+
+.category-block .catalog-grid {
+  margin-top: 36px; }
+
+.tabs-heading {
+  margin-bottom: 23px; }
 
 .catalog-grid {
   display: grid;
@@ -2630,46 +2641,49 @@ body.menu-opened .menu .close-button {
   @media only all and (min-width: 900px) {
     .catalog-grid {
       grid-template-columns: 1fr 1fr; } }
-  .catalog-grid .catalog-cell_image {
-    height: 355px;
-    overflow: hidden;
-    text-align: center;
-    background: #f3f3f6;
-    display: block;
-    padding: 15px;
-    box-sizing: border-box; }
-    .catalog-grid .catalog-cell_image img {
-      transform: translateY(40px);
-      display: inline-block;
-      max-width: 100%; }
-  .catalog-grid .catalog-cell_categories {
-    font-weight: 300;
-    margin-bottom: 33px;
-    color: #929ba9;
-    line-height: 1.813; }
-    .catalog-grid .catalog-cell_categories a {
-      text-decoration: none;
-      letter-spacing: .1px;
-      transition: color 200ms ease, border 200ms ease;
-      padding-bottom: 3px;
-      color: #929ba9;
-      border-bottom: 1px solid #fff; }
-      .catalog-grid .catalog-cell_categories a:hover {
-        color: #092f57;
-        border-bottom: 1px solid; }
-  .catalog-grid .catalog-cell_title {
-    font-size: 27px;
-    text-transform: uppercase;
-    line-height: 1.556;
-    font-weight: 500;
-    color: #092f57;
-    text-decoration: none;
-    transition: color 200ms ease;
-    margin: 23px 0 15px 0;
+
+.catalog-cell_image {
+  height: 355px;
+  overflow: hidden;
+  text-align: center;
+  background: #f3f3f6;
+  display: block;
+  padding: 15px;
+  box-sizing: border-box; }
+  .catalog-cell_image img {
+    transform: translateY(40px);
     display: inline-block;
-    letter-spacing: .7px; }
-    .catalog-grid .catalog-cell_title:hover {
-      color: #0090f0; }
+    max-width: 100%; }
+
+.catalog-cell_categories {
+  font-weight: 300;
+  margin-bottom: 33px;
+  color: #929ba9;
+  line-height: 1.813; }
+  .catalog-cell_categories a {
+    text-decoration: none;
+    letter-spacing: .1px;
+    transition: color 200ms ease, border 200ms ease;
+    padding-bottom: 3px;
+    color: #929ba9;
+    border-bottom: 1px solid #fff; }
+    .catalog-cell_categories a:hover {
+      color: #092f57;
+      border-bottom: 1px solid; }
+
+.catalog-cell_title {
+  font-size: 27px;
+  text-transform: uppercase;
+  line-height: 1.556;
+  font-weight: 500;
+  color: #092f57;
+  text-decoration: none;
+  transition: color 200ms ease;
+  margin: 23px 0 8px 0;
+  display: inline-block;
+  letter-spacing: .7px; }
+  .catalog-cell_title:hover {
+    color: #0090f0; }
 
 .favorite-toggle_heart {
   fill: #d9dfe5;
@@ -2691,8 +2705,7 @@ body.menu-opened .menu .close-button {
     .card-grid {
       grid-template-columns: repeat(1, 1fr); } }
   .card-grid .card {
-    background: #fff;
-    min-height: 620px; }
+    background: #fff; }
 
 .card {
   display: flex;
@@ -3604,10 +3617,28 @@ nav a {
   flex-direction: column;
   flex: 1; }
 
+@media only all and (min-width: 1024px) {
+  .equipment-slider_block {
+    padding: 100px 0 150px 0; } }
+
+@media only all and (min-width: 0) and (max-width: 1023px) {
+  .equipment-slider_block {
+    padding: 40px 0; } }
+
+.equipment-slider_block .equipment-slider {
+  margin-top: 48px; }
+
 .page-panel {
   background: #092f57 url(../img/grid-background.png) no-repeat center/cover;
-  padding: 38px 0;
   color: #fff; }
+  @media only all and (min-width: 1024px) {
+    .page-panel:not(.page-panel_mini) {
+      padding: 48px 0 72px 0; } }
+  @media only all and (min-width: 0) and (max-width: 1023px) {
+    .page-panel:not(.page-panel_mini) {
+      padding: 42px 0 50px 0; } }
+  .page-panel_mini {
+    padding: 38px 0; }
   .page-panel .page-title {
     font-weight: 300;
     line-height: 1.233;
@@ -3700,7 +3731,7 @@ nav a {
     transform: translateY(2px); }
     @media only all and (min-width: 1024px) {
       .breadcrumbs .breadcrumbs-separator {
-        margin: 0 18px; } }
+        margin: 0 14px; } }
     @media only all and (min-width: 0) and (max-width: 1023px) {
       .breadcrumbs .breadcrumbs-separator {
         margin: 0 8px; } }
