@@ -1,0 +1,10 @@
+{
+  "short_name": "NISE",
+  "name": "NISE",
+  "start_url": "/",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#092f57",
+  "description": "Медицинское оборудование экспертного уровня"
+}
