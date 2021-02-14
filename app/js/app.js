@@ -4,6 +4,33 @@ jQuery(function ($) {
         overlayClasses = 'menu-opened search-opened commercial-form-opened',
         phoneMask = '+7 (000) 000-00-00';
 
+    let swiper = new Swiper('.articles-slider', {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        pagination: {
+            el: '.articles-slider_block .swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.articles-slider_block .swiper-button-next',
+            prevEl: '.articles-slider_block .swiper-button-prev',
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+                spaceBetween: 30,
+            },
+            800: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+            },
+            1116: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+            },
+        }
+    });
+
     $('select').selectric({responsive: true});
 
     $(document).keyup(function(e) {

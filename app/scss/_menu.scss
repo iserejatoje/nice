@@ -96,8 +96,10 @@ body.menu-opened {
   overflow: auto;
 
   .app-navigation_block {
-    @include respond(400px) {
+    @include respond(1386px) {
       padding: 0 20px;
+    }
+    @include respond(400px) {
       height: 115px;
     }
     @include respond(0, 400px) {
