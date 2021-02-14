@@ -70,7 +70,7 @@
     font-size: 48px;
   }
   @include respond(0, $mobile-breakpoint) {
-    font-size: 31px;
+    font-size: 27px;
   }
   font-weight: $regular;
   letter-spacing: .5px;
