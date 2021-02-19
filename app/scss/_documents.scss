@@ -9,61 +9,65 @@
   @include respond(0, $mobile-breakpoint) {
     padding: 40px 0 60px 0;
   }
+}
 
-  .documents-grid {
-    display: grid;
-    grid-gap: 25px;
-    margin-bottom: 60px;
-    padding-top: 20px;
-    @include respond($mobile-breakpoint) {
-      grid-template-columns: repeat(2, 1fr);
-    }
+.documents-wrapper {
+  margin-top: 72px;
+}
+
+.documents-grid {
+  display: grid;
+  grid-gap: 25px;
+  margin-bottom: 60px;
+  padding-top: 20px;
+  @include respond($mobile-breakpoint) {
+    grid-template-columns: repeat(2, 1fr);
   }
+}
 
-  .documents-format {
-    color: $gray-font;
-  }
+.documents-format {
+  color: $gray-font;
+}
 
-  .documents-title {
-    font-weight: $regular;
-    font-size: 16px;
-    line-height: 1.875;
-  }
+.documents-title {
+  font-weight: $regular;
+  font-size: 16px;
+  line-height: 1.875;
+}
 
-  .documents-grid_item {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: $navy;
-    &:hover {
-      .documents-icon {
-        background: $blue;
-        border-color: $blue;
-        color: $white;
-        span {
-          border-bottom: 1px solid $white;
-        }
+.documents-grid_item {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: $navy;
+  &:hover {
+    .documents-icon {
+      background: $blue;
+      border-color: $blue;
+      color: $white;
+      span {
+        border-bottom: 1px solid $white;
       }
     }
   }
+}
 
-  .documents-icon {
-    transition: color 200ms ease, background 200ms ease, border-color 200ms ease;
-    min-width: 58px;
-    height: 58px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid $document-icon;
-    text-align: center;
-    margin-right: 18px;
-    span {
-      transition: border-color 200ms ease;
-      border-bottom: 1px solid $blue;
-      font-weight: $regular;
-      font-size: 17px;
-      text-transform: uppercase;
-      padding-bottom: 2px;
-    }
+.documents-icon {
+  transition: color 200ms ease, background 200ms ease, border-color 200ms ease;
+  min-width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $document-icon;
+  text-align: center;
+  margin-right: 18px;
+  span {
+    transition: border-color 200ms ease;
+    border-bottom: 1px solid $blue;
+    font-weight: $regular;
+    font-size: 17px;
+    text-transform: uppercase;
+    padding-bottom: 2px;
   }
 }

@@ -559,6 +559,10 @@ nav {
   }
 }
 
+.technical-wrapper {
+  padding-top: 40px;
+}
+
 .page-panel {
   background: $navy url(../img/grid-background.png) no-repeat center / cover;
 
@@ -915,5 +919,301 @@ nav {
 
   ul, li {
     list-style: none;
+  }
+}
+
+.page-text_title {
+  position: relative;
+  letter-spacing: .5px;
+  font-weight: $regular;
+  line-height: 1.167;
+  margin: 14px 0 25px;
+  @include respond($mobile-breakpoint) {
+    font-size: 48px;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    font-size: 34px;
+  }
+  @include respond($mobile-breakpoint) {
+    &:before {
+      content: '';
+      width: 80px;
+      height: 1px;
+      background: transparentize($navy, .7);
+      display: block;
+      position: absolute;
+      right: calc(100% + 28px);
+      top: 26px;
+    }
+  }
+}
+
+.gallery-top {
+  width: 100%;
+  .swiper-slide {
+    background-position: center;
+    @include respond(650px) {
+      height: 430px;
+    }
+    @include respond(0, 650px) {
+      height: 335px;
+    }
+  }
+}
+
+.gallery-thumbs {
+  box-sizing: border-box;
+  margin-top: 15px;
+  .swiper-slide {
+    background-repeat: no-repeat;
+    height: 66px;
+    cursor: pointer;
+    background-color: $white;
+  }
+}
+
+.product-top_block {
+  @include respond($mobile-breakpoint) {
+    padding: 60px 0 100px 0;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    padding: 60px 0;
+  }
+  .swiper-button-prev {
+    left: 25px;
+  }
+  .swiper-button-next {
+    right: 25px;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    position: absolute;
+    cursor: pointer;
+    top: 50%;
+    width: 22px;
+    height: 32px;
+    display: block;
+    z-index: 1000;
+  }
+}
+
+.gallery-thumbs .swiper-slide-thumb-active {
+  box-shadow: inset 0 0 0 1px $blue;
+}
+
+.product-slider {
+  display: flex;
+
+  @include respond($mobile-breakpoint) {
+    flex-grow: 1;
+    min-width: 0;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    flex-direction: column-reverse;
+  }
+
+  .swiper-slide {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: $white;
+    background-size: contain;
+  }
+
+  .column {
+    &:first-child {
+      box-sizing: border-box;
+      width: 100%;
+      @include respond(1200px) {
+        max-width: 590px;
+        padding-right: 70px;
+      }
+      @include respond($mobile-breakpoint, 1200px) {
+        max-width: 520px;
+        padding-right: 35px;
+      }
+      @include respond(0, $mobile-breakpoint) {
+        margin-top: 35px;
+      }
+    }
+    &:last-child {
+      flex: 1;
+    }
+  }
+}
+
+.product-links {
+  margin-top: 60px;
+  @include respond(1080px) {
+    display: flex;
+    justify-content: space-between;
+  }
+  .product-links_element {
+    min-height: 80px;
+    border: 1px solid $blue;
+    box-sizing: border-box;
+    @include respond(1080px) {
+      width: calc(50% - 5px);
+    }
+    &:first-child {
+      @include respond(0, 1080px) {
+        margin-bottom: 10px;
+      }
+    }
+    display: flex;
+    line-height: 1.619;
+    align-items: center;
+    font-size: 21px;
+    font-weight: $regular;
+    color: $navy;
+    padding: 20px;
+    justify-content: center;
+    text-decoration: none;
+    transition: background 200ms ease, color 200ms ease;
+    &.active,
+    &:hover {
+      background: $blue;
+      color: $white;
+    }
+  }
+}
+
+.table-options_block {
+  border: 2px solid $blue;
+  padding: 0 40px;
+  box-sizing: border-box;
+  max-width: 1070px;
+  .table-row {
+    @include respond($mobile-breakpoint) {
+      display: flex;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      padding: 18px;
+    }
+    &.hidden {
+      display: none;
+    }
+    .column {
+      @include respond($mobile-breakpoint) {
+        padding: 18px;
+      }
+      font-weight: $regular;
+      &:first-child {
+        @include respond($mobile-breakpoint) {
+          max-width: 58%;
+          width: 100%;
+        }
+        @include respond(0, $mobile-breakpoint) {
+          margin-bottom: 7px;
+        }
+        font-weight: $medium;
+      }
+      &:last-child {
+        color: $gray-font;
+      }
+    }
+    &:nth-child(even) {
+      background: $asphalt;
+    }
+  }
+}
+
+.append-options {
+  text-transform: uppercase;
+  height: 73px;
+  box-sizing: border-box;
+  border: 2px solid $blue;
+  border-top: none;
+  width: 100%;
+  text-align: left;
+  max-width: 1070px;
+  color: $blue;
+  font-weight: $medium;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .label {
+    padding-left: 58px;
+  }
+  .icon {
+    width: 75px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 2px solid $blue;
+  }
+  svg {
+    fill: $blue;
+    transform: rotate(90deg);
+  }
+}
+
+.product-title {
+  font-weight: $regular;
+  line-height: 1.316;
+  margin: 0 0 8px;
+  @include respond($mobile-breakpoint) {
+    font-size: 38px;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    font-size: 30px;
+  }
+}
+
+.product-buttons {
+  @include respond(650px) {
+    display: flex;
+    align-items: center;
+  }
+  @include respond(0, 650px) {
+    .blue-btn {
+      margin-bottom: 15px;
+    }
+  }
+  margin-top: 40px;
+  a {
+    &:first-child {
+      margin-right: 20px;
+    }
+  }
+}
+
+.product-brand {
+  color: $blue;
+  font-size: 18px;
+  line-height: 1.667;
+  font-weight: $regular;
+}
+
+.product-text {
+  font-weight: $regular;
+  font-size: 16px;
+  line-height: 1.813;
+  margin-top: 22px;
+}
+
+.title-medium {
+  position: relative;
+  letter-spacing: .5px;
+  font-weight: $regular;
+  line-height: 1.474;
+  margin: 14px 0 25px;
+  @include respond($mobile-breakpoint) {
+    font-size: 38px;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    font-size: 24px;
+  }
+  @include respond($mobile-breakpoint) {
+    &:before {
+      content: '';
+      width: 80px;
+      height: 1px;
+      background: transparentize($navy, .7);
+      display: block;
+      position: absolute;
+      right: calc(100% + 28px);
+      top: 26px;
+    }
   }
 }

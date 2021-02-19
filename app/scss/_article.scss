@@ -32,33 +32,14 @@
     color: $gray-font;
   }
 }
-.page-text_title {
-  position: relative;
-  letter-spacing: .5px;
+
+.page-text_content {
   @include respond($mobile-breakpoint) {
-    font-size: 48px;
+    padding: 51px 0 160px 110px;
   }
   @include respond(0, $mobile-breakpoint) {
-    font-size: 34px;
+    padding: 30px 0 50px 0;
   }
-  font-weight: $regular;
-  line-height: 1.167;
-  margin: 14px 0 25px;
-  @include respond(1568px) {
-    &:before {
-      content: '';
-      width: 80px;
-      height: 1px;
-      background: transparentize($navy, .7);
-      display: block;
-      position: absolute;
-      right: calc(100% + 28px);
-      top: 26px;
-    }
-  }
-}
-.page-text_content {
-  padding: 51px 0;
   h2 {
     color: $navy;
     @include respond($mobile-breakpoint) {
@@ -84,14 +65,14 @@
   }
 }
 
-.articles-slider_block {
+.cards-slider_block {
   @include respond($mobile-breakpoint) {
     padding: 80px 0 55px 0;
   }
   @include respond(0, $mobile-breakpoint) {
     padding: 40px 0 50px 0;
   }
-  .articles-slider {
+  .cards-slider {
     @include respond($mobile-breakpoint) {
       margin-top: 50px;
     }
