@@ -3276,17 +3276,32 @@ body {
     justify-content: flex-end;
     position: relative; } }
 
+.map-wrapper_light {
+  background: #fff; }
+  .map-wrapper_light .map-communications_block {
+    color: #092f57; }
+    .map-wrapper_light .map-communications_block a {
+      color: #092f57; }
+      .map-wrapper_light .map-communications_block a:hover {
+        color: #0090f0; }
+
+.map-wrapper_dark {
+  background: #092f57 url(../img/grid-background.png) repeat left top; }
+  .map-wrapper_dark .map-communications_block {
+    color: #fff; }
+    .map-wrapper_dark .map-communications_block a {
+      color: #fff; }
+      .map-wrapper_dark .map-communications_block a:hover {
+        color: #0090f0; }
+
 .map-wrapper .phone-list_block .phone-element:not(:last-child) {
   margin-bottom: 20px; }
 
 .map-wrapper .phone-list_block .phone-element a {
   transition: color 200ms ease;
-  color: #092f57;
   font-weight: bold;
   letter-spacing: 1px;
   text-decoration: none; }
-  .map-wrapper .phone-list_block .phone-element a:hover {
-    color: #0090f0; }
   @media only all and (min-width: 1024px) {
     .map-wrapper .phone-list_block .phone-element a {
       font-size: 40px; } }
@@ -3346,26 +3361,24 @@ body {
     .map-wrapper .map-communications .value-element {
       font-size: 18px; } }
   .map-wrapper .map-communications .value-element .email-link {
-    color: #092f57;
     border-bottom: 1px solid #0090f0;
     padding-bottom: 7px;
     text-decoration: none;
     transition: color 200ms ease; }
-    .map-wrapper .map-communications .value-element .email-link:hover {
-      color: #0090f0; }
 
 @media only all and (min-width: 1024px) {
   .map-wrapper .map-communications .map-container {
     display: flex; } }
 
-@media only all and (min-width: 1024px) {
-  .map-wrapper #map {
-    height: 860px;
-    width: 50%; } }
-
-@media only all and (min-width: 0) and (max-width: 1023px) {
-  .map-wrapper #map {
-    height: 300px; } }
+.map-wrapper #map {
+  background: #fff; }
+  @media only all and (min-width: 1024px) {
+    .map-wrapper #map {
+      height: 860px;
+      width: 50%; } }
+  @media only all and (min-width: 0) and (max-width: 1023px) {
+    .map-wrapper #map {
+      height: 300px; } }
 
 .container {
   max-width: 1330px;

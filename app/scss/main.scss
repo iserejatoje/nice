@@ -141,6 +141,30 @@ body {
     justify-content: flex-end;
     position: relative;
   }
+  &_light {
+    background: $white;
+    .map-communications_block {
+      color: $navy;
+      a {
+        color: $navy;
+        &:hover {
+          color: $blue;
+        }
+      }
+    }
+  }
+  &_dark {
+    background: $navy url(../img/grid-background.png) repeat left top;
+    .map-communications_block {
+      color: $white;
+      a {
+        color: $white;
+        &:hover {
+          color: $blue;
+        }
+      }
+    }
+  }
   .phone-list_block {
     .phone-element {
       &:not(:last-child) {
@@ -148,10 +172,7 @@ body {
       }
       a {
         @include color-transition;
-        color: $navy;
-        &:hover {
-          color: $blue;
-        }
+
         @include respond($mobile-breakpoint) {
           font-size: 40px;
         }
@@ -217,14 +238,10 @@ body {
       font-weight: $regular;
       line-height: 1.619;
       .email-link {
-        color: $navy;
         border-bottom: 1px solid $blue;
         padding-bottom: 7px;
         @include link-style;
         @include color-transition;
-        &:hover {
-          color: $blue;
-        }
       }
     }
     .map-container {
@@ -234,6 +251,7 @@ body {
     }
   }
   #map {
+    background: $white;
     @include respond($mobile-breakpoint) {
       height: 860px;
       width: 50%;
