@@ -1235,3 +1235,193 @@ nav {
     }
   }
 }
+
+.partners-wrap {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  @include respond(0, $mobile-breakpoint) {
+    .heading,
+    .partners-description {
+      display: none;
+    }
+  }
+}
+
+.partners-map_block {
+  .partners-inner {
+    position: relative;
+  }
+  .mobile-partners_block {
+    padding-top: 35px;
+    padding-bottom: 35px;
+    @include respond($mobile-breakpoint) {
+      display: none;
+      padding: 35px 0;
+    }
+  }
+  .partners-description {
+    font-weight: $regular;
+    line-height: 1.722;
+    @include respond(0, $mobile-breakpoint) {
+      font-size: 16px;
+    }
+    @include respond($mobile-breakpoint) {
+      font-size: 18px;
+      max-width: 520px;
+      flex: 1;
+      margin-bottom: 30px;
+    }
+  }
+  .partners-block {
+    @include respond($mobile-breakpoint) {
+      padding: 95px 0;
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      padding: 0;
+    }
+    box-sizing: border-box;
+    .container {
+      height: 100%;
+    }
+  }
+  .partners-map_image {
+    width: 100%;
+    display: block;
+  }
+  .marker-line {
+    @include respond($mobile-breakpoint) {
+      font-size: 18px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      font-size: 16px;
+    }
+    color: $gray-font;
+    font-weight: $regular;
+    line-height: 1.722;
+  }
+  .partners-numbers {
+    @include respond($mobile-breakpoint) {
+      display: flex;
+      margin-top: 50px;
+      transform: translateY(-8px);
+    }
+    .column {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      @include respond(0, $mobile-breakpoint) {
+        margin-bottom: 35px;
+      }
+      @include respond($mobile-breakpoint) {
+        &:nth-child(1) {
+          max-width: 220px;
+        }
+        &:nth-child(2) {
+          max-width: 310px;
+          padding-right: 130px;
+        }
+        &:nth-child(3) {
+          max-width: 610px;
+        }
+      }
+    }
+    .label {
+      font-size: 16px;
+      color: $blue;
+      font-weight: $bold;
+      text-transform: uppercase;
+      line-height: 2.188;
+      letter-spacing: 1.5px;
+    }
+    .number {
+      font-size: 72px;
+      color: $partner-gray;
+      line-height: 0.737;
+      margin-top: 12px;
+    }
+  }
+}
+
+.official-dealers_block {
+  @include respond($mobile-breakpoint) {
+    padding: 45px 0 160px 0;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    padding: 35px 0 50px 0;
+  }
+  .dealers-grid {
+    @include respond($mobile-breakpoint) {
+      margin-top: 43px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      margin-top: 32px;
+    }
+    display: grid;
+    grid-gap: 10px;
+    @include respond(980px) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @include respond(0, 980px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  .dealer-item {
+    @include respond($mobile-breakpoint) {
+      padding: 46px 40px;
+      height: 335px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      padding: 30px 25px;
+    }
+    background: $white;
+    box-sizing: border-box;
+    box-shadow: 3.536px 3.536px 12px 0 rgba(23, 77, 134, 0.15);
+    transition: box-shadow 200ms ease;
+    &:hover {
+      box-shadow: 0 30px 54px 6px rgba(9, 47, 87, 0.13), 14.142px 14.142px 36px 4px rgba(249, 249, 249, 0.1);
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    .excerpt {
+      font-size: 15px;
+      color: $gray-font;
+      line-height: 2.067;
+      font-weight: $regular;
+      margin-top: 27px;
+    }
+    .text {
+      font-size: 16px;
+      color: $gray-font;
+      font-weight: $regular;
+      line-height: 1.8;
+      margin-top: 7px;
+      letter-spacing: .15px;
+    }
+    .brand {
+      font-size: 21px;
+      font-weight: $regular;
+      line-height: 1.8;
+    }
+  }
+  .title {
+    @include respond($mobile-breakpoint) {
+      font-size: 42px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      font-size: 30px;
+    }
+    font-weight: $regular;
+    line-height: 1.333;
+    letter-spacing: .3px;
+  }
+}
+
