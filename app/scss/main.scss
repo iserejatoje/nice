@@ -1332,20 +1332,9 @@ nav {
         }
       }
     }
-    .label {
-      font-size: 16px;
-      color: $blue;
-      font-weight: $bold;
-      text-transform: uppercase;
-      line-height: 2.188;
-      letter-spacing: 1.5px;
-    }
-    .number {
-      font-size: 72px;
-      color: $partner-gray;
-      line-height: 0.737;
-      margin-top: 12px;
-    }
+  }
+  .number {
+    color: $partner-gray;
   }
 }
 
@@ -1412,6 +1401,7 @@ nav {
       line-height: 1.8;
     }
   }
+
   .title {
     @include respond($mobile-breakpoint) {
       font-size: 42px;
@@ -1425,3 +1415,77 @@ nav {
   }
 }
 
+.about-block {
+  background: $navy url(../img/grid-background.png) repeat left top;
+  @include respond($mobile-breakpoint) {
+    padding: 95px 0 135px 0;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    padding: 45px 0 65px 0;
+  }
+
+  .grid {
+    display: flex;
+    margin-bottom: 36px;
+
+    .item {
+      box-sizing: border-box;
+      &:nth-child(1) {
+        max-width: 458px;
+        width: 100%;
+      }
+      &:nth-child(2) {
+        max-width: 324px;
+        padding-right: 48px;
+      }
+      &:nth-child(3) {
+        padding-right: 48px;
+      }
+      &:nth-child(4) {
+        max-width: 228px;
+      }
+    }
+  }
+
+  .title {
+    @include respond($mobile-breakpoint) {
+      font-size: 42px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      font-size: 30px;
+    }
+    margin-bottom: 58px;
+    color: $white;
+    font-weight: $regular;
+    line-height: 1.333;
+    letter-spacing: .3px;
+  }
+
+  .marker-line {
+    color: $white;
+    font-weight: $regular;
+    font-size: 18px;
+    line-height: 1.722;
+    margin-top: 30px;
+  }
+
+  .number {
+    color: $white;
+  }
+
+}
+
+.number {
+  font-size: 72px;
+  line-height: 0.737;
+  margin-top: 12px;
+}
+
+.blue-label {
+  font-size: 16px;
+  color: $blue;
+  font-weight: $bold;
+  text-transform: uppercase;
+  line-height: 2.188;
+  letter-spacing: 1.5px;
+}

@@ -4258,19 +4258,8 @@ nav a {
     .partners-map_block .partners-numbers .column:nth-child(3) {
       max-width: 610px; } }
 
-.partners-map_block .partners-numbers .label {
-  font-size: 16px;
-  color: #0090f0;
-  font-weight: bold;
-  text-transform: uppercase;
-  line-height: 2.188;
-  letter-spacing: 1.5px; }
-
-.partners-map_block .partners-numbers .number {
-  font-size: 72px;
-  color: #d6dce2;
-  line-height: 0.737;
-  margin-top: 12px; }
+.partners-map_block .number {
+  color: #d6dce2; }
 
 @media only all and (min-width: 1024px) {
   .official-dealers_block {
@@ -4341,3 +4330,60 @@ nav a {
   @media only all and (min-width: 0) and (max-width: 1023px) {
     .official-dealers_block .title {
       font-size: 30px; } }
+
+.about-block {
+  background: #092f57 url(../img/grid-background.png) repeat left top; }
+  @media only all and (min-width: 1024px) {
+    .about-block {
+      padding: 95px 0 135px 0; } }
+  @media only all and (min-width: 0) and (max-width: 1023px) {
+    .about-block {
+      padding: 45px 0 65px 0; } }
+  .about-block .grid {
+    display: flex;
+    margin-bottom: 36px; }
+    .about-block .grid .item {
+      box-sizing: border-box; }
+      .about-block .grid .item:nth-child(1) {
+        max-width: 458px;
+        width: 100%; }
+      .about-block .grid .item:nth-child(2) {
+        max-width: 324px;
+        padding-right: 48px; }
+      .about-block .grid .item:nth-child(3) {
+        padding-right: 48px; }
+      .about-block .grid .item:nth-child(4) {
+        max-width: 228px; }
+  .about-block .title {
+    margin-bottom: 58px;
+    color: #fff;
+    font-weight: 300;
+    line-height: 1.333;
+    letter-spacing: .3px; }
+    @media only all and (min-width: 1024px) {
+      .about-block .title {
+        font-size: 42px; } }
+    @media only all and (min-width: 0) and (max-width: 1023px) {
+      .about-block .title {
+        font-size: 30px; } }
+  .about-block .marker-line {
+    color: #fff;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.722;
+    margin-top: 30px; }
+  .about-block .number {
+    color: #fff; }
+
+.number {
+  font-size: 72px;
+  line-height: 0.737;
+  margin-top: 12px; }
+
+.blue-label {
+  font-size: 16px;
+  color: #0090f0;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 2.188;
+  letter-spacing: 1.5px; }
