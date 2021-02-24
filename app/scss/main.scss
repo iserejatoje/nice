@@ -80,7 +80,7 @@
 .burger {
   width: 35px;
   height: 24px;
-  background: $white;
+  background: transparent;
   border: none;
   outline: none;
   padding: 0;
@@ -304,7 +304,7 @@ footer {
   .communications {
     .phone-link {
       @include link-style;
-      @include color-transition();
+      @include color-transition;
       color: $navy;
       &:hover {
         color: $blue;
@@ -313,6 +313,11 @@ footer {
     .email-link {
       color: $gray-font;
       border-bottom: 1px solid;
+      @include link-style;
+      @include color-transition;
+      &:hover {
+        color: $blue;
+      }
     }
   }
 }
@@ -525,7 +530,15 @@ nav {
 .app-panel {
   display: flex;
   align-items: center;
-  position: relative;
+  &:not(.header-frontpage) {
+    position: relative;
+  }
+  &.header-frontpage {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
 }
 
 .marker-line {
@@ -1421,14 +1434,19 @@ nav {
     padding: 95px 0 135px 0;
   }
   @include respond(0, $mobile-breakpoint) {
-    padding: 45px 0 65px 0;
+    padding: 45px 0 55px 0;
   }
 
   .grid {
     display: flex;
-    margin-bottom: 36px;
     @include respond(0, 1138px) {
       flex-wrap: wrap;
+    }
+    @include respond($mobile-breakpoint) {
+      margin-bottom: 36px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      margin-bottom: 15px;
     }
     .item {
       box-sizing: border-box;
@@ -1488,7 +1506,12 @@ nav {
 }
 
 .number {
-  font-size: 72px;
+  @include respond($mobile-breakpoint) {
+    font-size: 72px;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    font-size: 52px;
+  }
   line-height: 0.737;
   margin-top: 12px;
 }
@@ -1501,3 +1524,105 @@ nav {
   line-height: 2.188;
   letter-spacing: 1.5px;
 }
+
+.frontpage-catalog_block {
+  counter-reset: numbers;
+  @include respond($mobile-breakpoint) {
+    padding: 90px 0 120px 0;
+  }
+  @include respond(0, $mobile-breakpoint) {
+    padding: 40px 0 50px 0;
+  }
+  .catalog-rows {
+    padding-top: 20px;
+    @include respond($mobile-breakpoint) {
+      margin-bottom: 65px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      margin-bottom: 35px;
+    }
+  }
+  .row {
+    counter-increment: numbers;
+    @include respond($mobile-breakpoint) {
+      display: flex;
+    }
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    .cell-link {
+      @include respond($mobile-breakpoint) {
+        font-size: 27px;
+      }
+      @include respond(0, $mobile-breakpoint) {
+        font-size: 24px;
+      }
+      color: $navy;
+      text-transform: uppercase;
+      line-height: 1.556;
+      text-decoration: none;
+      margin-bottom: 26px;
+      @include color-transition;
+      &:hover {
+        color: $blue;
+      }
+    }
+    .cell {
+      display: flex;
+      flex-direction: column;
+      @include respond($mobile-breakpoint) {
+        width: 50%;
+      }
+      position: relative;
+      .image {
+        text-align: center;
+        overflow: hidden;
+        img {
+          display: inline-block;
+          transform: translateY(92px);
+          max-width: 100%;
+        }
+      }
+      &:first-child {
+        background: $catalog-cell;
+      }
+      &:last-child {
+        @include respond($mobile-breakpoint) {
+          padding: 130px 110px;
+        }
+        @include respond(0, $mobile-breakpoint) {
+          padding: 50px 0;
+        }
+        box-sizing: border-box;
+        &:before {
+          @include respond($mobile-breakpoint) {
+            position: absolute;
+            font-size: 130px;
+            left: 57px;
+            top: 92px;
+            z-index: -1;
+          }
+          @include respond(0, $mobile-breakpoint) {
+            margin-bottom: 20px;
+            font-size: 90px;
+          }
+          content: "0" counter(numbers);
+          color: rgba(200, 208, 217, 0.3);
+          pointer-events: none;
+          line-height: 0.673;
+        }
+      }
+    }
+  }
+}
+
+.frontpage {
+  background: url(../img/frontpage-slide.jpg) no-repeat center / 100%;
+  min-height: 920px;
+
+  .frontpage-slider {
+    margin-top: 115px;
+    height: calc(920px - 115px);
+  }
+}
+
