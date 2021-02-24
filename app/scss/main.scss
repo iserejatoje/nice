@@ -1427,22 +1427,34 @@ nav {
   .grid {
     display: flex;
     margin-bottom: 36px;
-
+    @include respond(0, 1138px) {
+      flex-wrap: wrap;
+    }
     .item {
       box-sizing: border-box;
-      &:nth-child(1) {
-        max-width: 458px;
-        width: 100%;
-      }
-      &:nth-child(2) {
-        max-width: 324px;
+      @include respond(960px, 1138px) {
+        width: 50%;
+        margin-bottom: 45px;
         padding-right: 48px;
       }
-      &:nth-child(3) {
-        padding-right: 48px;
+      @include respond(0, 960px) {
+        margin-bottom: 45px;
       }
-      &:nth-child(4) {
-        max-width: 228px;
+      @include respond(1138px) {
+        &:nth-child(1) {
+          max-width: 458px;
+          width: 100%;
+        }
+        &:nth-child(2) {
+          max-width: 324px;
+          padding-right: 48px;
+        }
+        &:nth-child(3) {
+          padding-right: 48px;
+        }
+        &:nth-child(4) {
+          max-width: 228px;
+        }
       }
     }
   }
