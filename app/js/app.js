@@ -56,6 +56,7 @@ jQuery(function ($) {
 
     let frontpage = new Swiper('.frontpage-slider', {
         slidesPerView: 1,
+        effect: 'fade',
         pagination: {
             el: '.frontpage-slider .swiper-pagination',
             clickable: true,
@@ -65,12 +66,17 @@ jQuery(function ($) {
             prevEl: '.frontpage-slider .swiper-button-prev',
         },
     });
-
     $('select').selectric({responsive: true});
 
     $(document).keyup(function(e) {
         if (e.key === "Escape") {
             $('body').removeClass(overlayClasses);
+        }
+    });
+
+    $(document).click(function(e) {
+        if ($(e.target).hasClass('commercial-overlay')) {
+            $('body').removeClass('commercial');
         }
     });
 
@@ -87,7 +93,23 @@ jQuery(function ($) {
         $('.append-options').remove();
     });
 
-    $('.search-link').click(function() {
+    $('.close-commercial').click(function() {
+        $('body').removeClass('commercial');
+        return false;
+    });
+
+    $('.product-links').on('click', 'a', function() {
+        $(this).addClass('active').siblings().removeClass('active');
+        $('.product_pages').find('.page').eq($(this).index()).show().siblings().hide();
+        return false;
+    });
+
+    $('[data-commercial]').click(function() {
+        $('body').addClass('commercial');
+        return false;
+    });
+
+    $('header .search-link, .menu .search-link').click(function() {
         $('body').addClass('search-opened').removeClass('menu-opened');
     });
 
@@ -106,7 +128,7 @@ jQuery(function ($) {
         setTimeout(function () {
             let script = document.createElement("script");
             script.type = "text/javascript";
-            script.src = "app/js/leaflet.min.js";
+            script.src = "/bitrix/templates/nais/js/leaflet.min.js";
             document.getElementsByTagName("body")[0].appendChild(script)
             script.onload = function () {
                 let map = L.map('map', {
@@ -115,13 +137,13 @@ jQuery(function ($) {
                 }).setView([55.342998, 86.090009], 16);
                 L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png').addTo(map);
                 let pin = L.icon({
-                    iconUrl: 'app/img/sprite.svg#pin',
+                    iconUrl: '/bitrix/templates/nais/img/sprite.svg#pin',
                     iconSize: [67, 67],
                     iconAnchor: [30, 67],
                 });
                 L.marker([55.342698, 86.090009], {icon: pin}).addTo(map);
             };
-        }, 1200);
+        }, 900);
     }
     if ($('.gallery-thumbs').length > 0) {
 
@@ -142,5 +164,130 @@ jQuery(function ($) {
 
         galleryThumbs.update();
     }
+
+    $('.favorite-toggle_heart, a.favorite').on('click', function() {
+        let $th = $(this);
+        $.ajax({
+            url: '/bitrix/templates/nais/ajax/favorite.php',
+            data: {
+                'product_id': $th.attr('data-id')
+            },
+            type: 'post',
+            success: function (data) {
+                $th.toggleClass('favorite-toggle_heart-active');
+
+                if (!$th.hasClass('active')) {
+                    $th.find('.fav_label').html('Убрать из избранного');
+                } else {
+                    $th.find('.fav_label').html('Добавить в избранное');
+                }
+
+                $th.toggleClass('active');
+
+            }
+        })
+        return false;
+    })
+
+    $('.form-request').submit(function() {
+        let $form = $(this);
+        $.ajax({
+            url: $form.attr('action'),
+            data: $form.serialize(),
+            type: 'post',
+            dataType: 'json',
+            success: function(data) {
+                if (data['error'] == '0') {
+                    $form.remove();
+                    $('.form-success_message').html('Спасибо за заявку!<br/>Мы свяжемся с вами в ближайшее время');
+                }
+            }
+        });
+        return false;
+    });
+
+    $('[data-download]').click(function() {
+        $.ajax({
+            url: '/bitrix/templates/nais/ajax/excel.php',
+            data: {},
+            type: 'post',
+            dataType: 'json',
+            success: function(data) {
+                if (data['error'] == '0') {
+                    let link = document.createElement('a');
+                    link.setAttribute('href', data['filename']);
+                    link.setAttribute('download', 'Коммерческое предложение.xlsx');
+                    link.click();
+                    return false;
+                }
+            }
+        });
+        return false;
+    });
+
+    $('.form-commercial').submit(function() {
+        let $form = $(this);
+        $.ajax({
+            url: $form.attr('action'),
+            data: $form.serialize(),
+            type: 'post',
+            dataType: 'json',
+            success: function(data) {
+                if (data['error'] == '0') {
+                    $form.remove();
+                    $('.heading-contact').html('Спасибо за заявку!<br/>Мы свяжемся с вами в ближайшее время').addClass('success');
+                }
+            }
+        });
+        return false;
+    });
+
+    function delay(callback, ms) {
+        let timer = 0;
+        return function() {
+            let context = this, args = arguments;
+            clearTimeout(timer);
+            timer = setTimeout(function () {
+                callback.apply(context, args);
+            }, ms || 0);
+        };
+    }
+
+    $(document).click(function(e) {
+        if ($(e.target).closest('.search-form').length == 0) {
+            $('.search-list').html('').hide();
+        }
+    })
+
+    $('input[name="q"]').on('keyup focus', delay(function (e) {
+        let $th = $(this);
+
+        if ($.trim($th.val()).length > 2) {
+            $.ajax({
+                url: '/bitrix/templates/nais/ajax/search.php',
+                data: {
+                    'q': $.trim($th.val())
+                },
+                dataType: 'json',
+                type: 'post',
+                success: function (data) {
+                    console.debug(data);
+
+                    if (data.length > 0) {
+                        let html = '';
+                        $.each(data, function (i, val) {
+                            html += '<a href="' + $(this).attr('DETAIL_PAGE_URL') + '">' + $(this).attr('NAME') + '</a>';
+                        });
+                        $('.search-list').html(html).show();
+                    } else {
+                        $('.search-list').html('').hide();
+                    }
+                }
+            })
+        } else {
+            $('.search-list').html('').hide();
+        }
+
+    }, 500));
 
 });

@@ -29,9 +29,12 @@ body.search-opened {
 }
 
 .search-block {
-  padding-top: 65px;
+  @include respond($mobile-breakpoint) {
+    padding-top: 65px;
+  }
   border-bottom: 2px solid $white;
   .search-form {
+    position: relative;
     display: flex;
     align-items: center;
     svg {
@@ -43,6 +46,7 @@ body.search-opened {
     background: transparent;
     border: none;
     width: 100%;
+    flex: 1;
     outline: 0;
     @include respond($mobile-breakpoint) {
       font-size: 24px;

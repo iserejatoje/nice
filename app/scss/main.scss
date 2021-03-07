@@ -17,6 +17,17 @@
 @import "news";
 @import "form";
 
+.category-separator:last-child {
+  display: none;
+}
+
+a,
+button,
+input,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
 .checkbox {
   font-weight: $regular;
   cursor: pointer;
@@ -336,6 +347,11 @@ footer {
     font-size: 1rem;
     line-height: 1.5;
     padding-bottom: 1px;
+    transition: color 200ms ease, border-color 200ms ease;
+    &:hover {
+      color: $blue;
+      border-color: transparentize($blue, .5);
+    }
   }
 }
 
@@ -538,6 +554,7 @@ nav {
     left: 0;
     right: 0;
     top: 0;
+    z-index: 2;
   }
 }
 
@@ -607,6 +624,15 @@ nav {
   }
   &_mini {
     padding: 38px 0;
+    .page-title,
+    .page-description {
+      display: none;
+    }
+  }
+  &_empty {
+    .page-description {
+      display: none;
+    }
   }
 
   color: $white;
@@ -953,6 +979,35 @@ nav {
   }
 }
 
+.page-text_content {
+  h1 {
+    color: $navy;
+    position: relative;
+    letter-spacing: .5px;
+    font-weight: $regular;
+    line-height: 1.167;
+    margin: 14px 0 25px;
+    @include respond($mobile-breakpoint) {
+      font-size: 48px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      font-size: 34px;
+    }
+    @include respond($mobile-breakpoint) {
+      &:before {
+        content: '';
+        width: 80px;
+        height: 1px;
+        background: transparentize($navy, .7);
+        display: block;
+        position: absolute;
+        right: calc(100% + 28px);
+        top: 26px;
+      }
+    }
+  }
+}
+
 .page-text_title {
   position: relative;
   letter-spacing: .5px;
@@ -1209,11 +1264,163 @@ nav {
   }
 }
 
+a.favorite {
+  &.active {
+    svg {
+      fill: $blue;
+    }
+  }
+}
+
+.search-result_block {
+  @include respond($mobile-breakpoint) {
+    padding: 95px 0 115px;
+    .page-description {
+      font-size: 21px;
+    }
+  }
+  @include respond(0, $mobile-breakpoint) {
+    padding: 45px 0 60px;
+    .page-description {
+      font-size: 18px;
+    }
+  }
+}
+
+body.commercial {
+  overflow: hidden;
+  .commercial-overlay {
+    display: flex;
+  }
+}
+
+.commercial-overlay {
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: transparentize($navy, .3);
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  padding: 20px;
+  display: none;
+
+  .commercial-form {
+    .pure-btn {
+      position: absolute;
+      right: 27px;
+      svg {
+        fill: $navy;
+      }
+    }
+    > .text-center {
+      &.success {
+        margin-top: 52px;
+        line-height: 1.3;
+      }
+      font-weight: $regular;
+      @include respond($mobile-breakpoint) {
+        font-size: 28px;
+        margin-bottom: 37px;
+      }
+      @include respond(0, $mobile-breakpoint) {
+        font-size: 21px;
+        margin-bottom: 28px;
+      }
+    }
+    background: $white;
+    max-width: 625px;
+    width: 100%;
+    @include respond($mobile-breakpoint) {
+      padding: 30px 30px 40px 30px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      padding: 20px 30px 20px 20px;
+    }
+    box-sizing: border-box;
+    position: relative;
+    margin: auto;
+  }
+}
+
+.search-input {
+  position: relative;
+  margin-bottom: 45px;
+  .search-link {
+    position: absolute;
+    right: 0;
+    width: 55px;
+    top: 0;
+    bottom: 0;
+    .magnifying-icon {
+      top: 2px;
+      position: relative;
+    }
+  }
+  input {
+    border: 1px solid $gray-font;
+    outline: 0;
+    font-weight: $regular;
+    color: $navy;
+    width: 100%;
+    padding: 17px 23px;
+    box-sizing: border-box;
+    &::placeholder {
+      color: $gray-font;
+    }
+    &:focus {
+      border-color: $blue;
+    }
+  }
+}
+
+.search-list {
+  background: $white;
+  position: absolute;
+  top: calc(100% + 2px);
+  z-index: 100000;
+  left: 0;
+  right: 0;
+  @include respond($mobile-breakpoint) {
+    padding: 15px 0;
+  }
+  display: none;
+  a {
+    line-height: 1.45;
+    @include respond($mobile-breakpoint) {
+      font-size: 20px;
+      padding: 15px 36px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      font-size: 16px;
+      padding: 15px 20px;
+    }
+    font-weight: $regular;
+    color: $navy;
+    display: block;
+    text-decoration: none;
+    &:not(:last-child) {
+      border-bottom: 1px solid #e9e9e9;
+    }
+    &:hover {
+      color: $blue;
+    }
+  }
+}
+
 .product-brand {
   color: $blue;
   font-size: 18px;
   line-height: 1.667;
   font-weight: $regular;
+
+  a {
+    color: inherit;
+    @include link-style;
+  }
 }
 
 .product-text {
@@ -1577,6 +1784,8 @@ nav {
       .image {
         text-align: center;
         overflow: hidden;
+        height: 100%;
+        display: block;
         img {
           display: inline-block;
           transform: translateY(92px);
@@ -1617,12 +1826,156 @@ nav {
 }
 
 .frontpage {
-  background: url(../img/frontpage-slide.jpg) no-repeat center / 100%;
-  min-height: 920px;
+  background: url(../img/frontpage-slide.jpg) no-repeat center / cover;
+  counter-reset: slider;
+
+  .slider-pagination {
+    @include respond($mobile-breakpoint) {
+      position: absolute;
+      bottom: 60px;
+      z-index: 2;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      margin-top: 30px;
+    }
+
+    @include respond(1410px) {
+      right: 0;
+    }
+    @include respond(0, 1410px) {
+      right: 20px;
+    }
+  }
+
+  .pagination-container {
+    position: relative;
+  }
 
   .frontpage-slider {
-    margin-top: 115px;
-    height: calc(920px - 115px);
+    @include respond(400px, $mobile-breakpoint) {
+      margin-top: 115px;
+      padding: 15px 0 30px 0;
+    }
+    @include respond(0, 400px) {
+      margin-top: 90px;
+      padding: 15px 0 30px 0;
+    }
+    @include respond(1366px) {
+      height: 920px;
+    }
+    @include respond($mobile-breakpoint, 1366px) {
+      height: 790px;
+    }
+    overflow: hidden;
+    position: relative;
+
+    @include respond(1535px, 1900px) {
+      .container {
+        max-width: 1160px;
+      }
+    }
+  }
+
+  .slider-inner {
+    max-width: 520px;
+    .line {
+      @include respond(1628px) {
+        content: '';
+        width: 45px;
+        height: 1px;
+        display: block;
+        position: absolute;
+        background: transparentize($navy, .5);
+        transform: translate(-80px, 34px);
+      }
+    }
+  }
+
+  .swiper-slide:not(.swiper-slide-active) {
+    opacity: 0 !important;
+  }
+
+  .slider-image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    max-width: 43%;
+    @include respond(1900px) {
+      right: 270px;
+    }
+    @include respond(1535px, 1900px) {
+      right: 100px;
+    }
+    @include respond(0, $mobile-breakpoint) {
+      display: none;
+    }
+    @include respond($mobile-breakpoint, 1535px) {
+      right: 40px;
+    }
+  }
+
+  .swiper-slide {
+    .container {
+      height: 100%;
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  .title {
+    counter-increment: slider;
+    font-weight: $regular;
+    line-height: 1.233;
+    @include respond(1366px) {
+      font-size: 60px;
+    }
+    @include respond(0, 1366px) {
+      font-size: 35px;
+    }
+
+    &:before {
+      @include respond(0, 1535px) {
+        content: none;
+      }
+      position: absolute;
+      content: "0" counter(slider);
+      font-weight: $medium;
+      color: rgba(200, 208, 217, 0.7);
+      line-height: 0.673;
+      z-index: -1;
+      left: 40px;
+      pointer-events: none;
+
+      @include respond(1710px) {
+        font-size: 130px;
+      }
+      @include respond(0, 1710px) {
+        font-size: 86px;
+        line-height: .85;
+      }
+    }
+
+  }
+
+  .description {
+    @include respond(1366px) {
+      font-size: 21px;
+    }
+    @include respond(0, 1366px) {
+      font-size: 18px;
+    }
+    color: rgb(9, 47, 87);
+    line-height: 1.667;
+    font-weight: $light;
+    margin: 25px 0 50px 0;
   }
 }
 
+.empty-catalog_text {
+  font-size: 18px;
+  margin: 40px 0 60px 0;
+  color: transparentize($navy, .6);
+}

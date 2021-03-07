@@ -30,11 +30,11 @@ let paths = {
 
 const {src, dest, parallel, series, watch} = require('gulp');
 const sass = require('gulp-sass');
-// const cleancss = require('gulp-clean-css');
+const cleancss = require('gulp-clean-css');
 const concat = require('gulp-concat');
 const browserSync = require('browser-sync').create();
-// const uglify = require('gulp-uglify-es').default;
-// const autoprefixer = require('gulp-autoprefixer');
+const uglify = require('gulp-uglify-es').default;
+const autoprefixer = require('gulp-autoprefixer');
 const newer = require('gulp-newer');
 const svgSprite = require('gulp-svg-sprite');
 
@@ -64,7 +64,7 @@ function svgs() {
 function scripts() {
     return src(paths.scripts.src)
         .pipe(concat(paths.jsOutputName))
-        // .pipe(uglify())
+        .pipe(uglify())
         .pipe(dest(paths.scripts.dest))
         .pipe(browserSync.stream())
 }
@@ -74,8 +74,8 @@ function styles() {
         .pipe(newer(paths.styles.dest))
         .pipe(sass())
         .pipe(concat(paths.cssOutputName))
-        // .pipe(autoprefixer({overrideBrowserslist: ['last 10 versions'], grid: true}))
-        // .pipe(cleancss({level: {1: {specialComments: 0}}}))
+        .pipe(autoprefixer({overrideBrowserslist: ['last 10 versions'], grid: true}))
+        .pipe(cleancss({level: {1: {specialComments: 0}}}))
         .pipe(dest(paths.styles.dest))
         .pipe(browserSync.stream())
 }
